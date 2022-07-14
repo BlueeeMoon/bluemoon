@@ -1,0 +1,53 @@
+{% macro menu() %}
+<ul id="menu" class="menu-list">
+    
+{% if config.extra.show_about           %}
+<li data-menuanchor="about"><a href="{{ get_url(path='/#anchor_about') }}">ACERCA DE MI</a></li>   
+{% endif %}
+{% if config.extra.show_bitcoin         %}
+<li data-menuanchor="bitcoin"><a href="{{ get_url(path='/#anchor_bitcoin') }}">BITCOIN</a></li>   
+{% endif %}
+{% if config.extra.show_lightning       %}
+<li data-menuanchor="lightning"><a href="{{ get_url(path='/#anchor_lightning') }}">LIGHTNING</a></li>   
+{% endif %}
+{% if config.extra.show_recursos       %}
+<li data-menuanchor="recursos"><a href="{{ get_url(path='/#anchor_recursos') }}">RECURSOS</a></li>   
+{% endif %}
+{% if config.extra.show_publications    %}
+<li data-menuanchor="publications"><a href="{{ get_url(path='/#anchor_publications') }}">PUBLICACIONES</a></li>
+{% endif %}
+{% if config.extra.show_blog            %} 
+<li data-menuanchor="blog"><a href="{{ get_url(path='/#anchor_blog') }}">BLOG</a></li>    
+{% endif %}
+</ul>
+{% endmacro %}
+
+{% macro fullpage() %}
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+            {% if config.extra.show_about           %} 'anchor_about',         {% endif %}
+            {% if config.extra.show_bitcoin         %} 'anchor_bitcoin',       {% endif %}
+            {% if config.extra.show_lightning       %} 'anchor_lightning',     {% endif %}
+            {% if config.extra.show_recursos        %} 'anchor_recursos',      {% endif %}
+            {% if config.extra.show_publications    %} 'anchor_publications',  {% endif %}
+            {% if config.extra.show_blog            %} 'anchor_blog',          {% endif %}
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+{% endmacro %}

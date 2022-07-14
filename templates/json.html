@@ -1,0 +1,68 @@
+[ 
+  {% set start = false %}
+  {% set section = get_section(path="blog/_index.md") %}
+  {%- for post in section.pages -%}
+    {% if not post.draft %}
+      {% set_global start = true %}
+      {
+      "title": {{ post.title | striptags | json_encode | safe }},
+      "url": {{ post.permalink | json_encode | safe }},
+      "body": {{ post.content | striptags | json_encode | safe }}
+      }
+    {% if not loop.last %},{% endif %}
+    {% endif %}
+  {%- endfor -%}
+
+  {% set section = get_section(path="bitcoin/_index.md") %}
+  {%- for post in section.pages -%}
+    {% if loop.first and star %}, {% endif %}
+      {% if not post.draft %}
+      {
+      "title": {{ post.title | striptags | json_encode | safe }},
+      "url": {{ post.permalink | json_encode | safe }},
+      "body": {{ post.content | striptags | json_encode | safe }}
+      }
+    {% if not loop.last %}, {% endif %}
+    {% endif %}
+  {%- endfor -%}  
+
+  {% set section = get_section(path="lightning/_index.md") %}
+  {%- for post in section.pages -%}
+    {% if loop.first and star %}, {% endif %}
+      {% if not post.draft %}
+      {
+      "title": {{ post.title | striptags | json_encode | safe }},
+      "url": {{ post.permalink | json_encode | safe }},
+      "body": {{ post.content | striptags | json_encode | safe }}
+      }
+    {% if not loop.last %}, {% endif %}
+    {% endif %}
+  {%- endfor -%}
+
+  {% set section = get_section(path="recursos/_index.md") %}
+  {%- for post in section.pages -%}
+    {% if loop.first and star %}, {% endif %} 
+      {% if not post.draft %}
+      {
+      "title": {{ post.title | striptags | json_encode | safe }},
+      "url": {{ post.permalink | json_encode | safe }},
+      "body": {{ post.content | striptags | json_encode | safe }}
+      }
+    {% if not loop.last %}, {% endif %}
+    {%- endif %}  
+  {%- endfor -%}
+
+  {% set section = get_section(path="publications/_index.md") %}
+  {%- for post in section.pages -%}
+    {% if loop.first and start %},{% endif %}
+    {% if not post.draft %}
+      {
+      "title": {{ post.title | striptags | json_encode | safe }},
+      "url": {{ post.permalink | json_encode | safe }},
+      "body": {{ post.content | striptags | json_encode | safe }}
+      }
+    {% if not loop.last %},{% endif %}
+    {% endif %}
+  {%- endfor -%}
+
+]

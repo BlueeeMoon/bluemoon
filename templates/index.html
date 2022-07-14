@@ -1,0 +1,46 @@
+{% import 'partials/about.html' as partial_about -%}
+{% import 'partials/section.html' as partial_section -%}
+
+{% extends "base.html" %}
+
+{% block content %}
+<div id="fullpage">
+  {% if config.extra.show_about %}
+  <div class="section hero is-fullheight page" id="about">
+    {{ partial_about::display() }}
+  </div>
+  {% endif %}
+
+  {% if config.extra.show_bitcoin %}
+  <div class="section hero is-fullheight page" id="bitcoin">
+    {{ partial_section::display(title="bitcoin", path="bitcoin/_index.md") }}
+  </div>
+  {% endif %}
+
+
+  {% if config.extra.show_lightning %}
+  <div class="section hero is-fullheight page" id="lightning">
+    {{ partial_section::display(title="lightning", path="lightning/_index.md") }}
+  </div>
+  {% endif %}
+
+  {% if config.extra.show_recursos %}
+  <div class="section hero is-fullheight page" id="recursos">
+    {{ partial_section::display(title="recursos", path="recursos/_index.md") }}
+  </div>
+  {% endif %}
+
+  {% if config.extra.show_publications %}
+  <div class="section hero is-fullheight page" id="publications">
+    {{ partial_section::display(title="publications",path="publications/_index.md", bibtex=true) }}
+  </div>
+  {% endif %}
+
+  {% if config.extra.show_blog %}
+  <div class="section hero is-fullheight page" id="blog">
+    {{ partial_section::display(title="blog",path="blog/_index.md") }}
+  </div>
+  {% endif %}
+
+</div>
+{% endblock content %}
