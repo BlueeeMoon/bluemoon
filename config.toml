@@ -9,6 +9,7 @@ build_search_index = true
 
 theme = "zola-resume"
 
+[taxonomies]
 taxonomies = [
   { name = "tags", feed = true },
 ]
