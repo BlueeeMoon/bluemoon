@@ -44,7 +44,7 @@ De acuerdo a esta imagen podemos ver la ruta que llevaría hacer el pago a Dave,
 R = secreto, también se conoce como preimagen y son solo los datos que se utilizan como entrada para una función hash.
 H = hash del secreto R.
 ```
-![Financiación](static/media/financiacion.png)
+![Financiación](/media/financiacion.png)
 
 * Alice enviará un pago de `2000` sats a Dave, lo primero que hace es notificarle que quiere enviárselos.
 * Entonces Dave creará un número aleatorio llamado secreto R que no muestra a nadie, luego, calculará el hash de este secreto dando como resultado a H.
