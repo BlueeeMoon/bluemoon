@@ -1,5 +1,5 @@
 ---
-title: Concpetos básicos sobre Lightning Network. 
+title: Conceptos básicos sobre Lightning Network. 
 date: 2022-05-24T11:35:41.496Z
 extra:
   featured: true
