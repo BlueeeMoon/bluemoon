@@ -18,7 +18,7 @@ taxonomies:
 
 #### En este mapa podrás encontrar lugares donde puedas hacer compras con bitcoin ya sea en lightning o en onchain.
 
-Si deseas hacer una donación a los desarrolladores puedes hacerlo en el siguiente [enlace](https://btcmap.or/support-us)
+Si deseas hacer una donación a los desarrolladores puedes hacerlo en el siguiente [enlace](https://btcmap.org/support-us)
 
 <iframe
 	id="btcmap"
