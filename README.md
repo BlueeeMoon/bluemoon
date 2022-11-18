@@ -1,5 +1,10 @@
 # Bitcoin y Lightning.
 
+<h1 align="center">Chu Chu</h1>
+
+<div align="center">
+  :steam_locomotive::train::train::train::train::train:
+</div>
 
 ## Mi página personal sobre Bitcoin y Lightning basada en [zola.](https://www.getzola.org/)
 
