@@ -41,7 +41,7 @@ De acuerdo a esta imagen podemos ver la ruta que llevaría hacer el pago a Dave,
 R = secreto, también se conoce como preimagen y son solo los datos que se utilizan como entrada para una función hash.
 H = hash del secreto R.
 ```
-![Financiación](/media/financiacion.png)
+![Financiación](/images/financiacion.png)
 
 * Alice enviará un pago de `2000` sats a Dave, lo primero que hace es notificarle que quiere enviárselos.
 * Entonces Dave creará un número aleatorio llamado secreto R que no muestra a nadie, luego, calculará el hash de este secreto dando como resultado a H.
@@ -59,7 +59,7 @@ Nota: los 3 sats adicionales se pagaran a los otros peers que ayuden a enrutar e
 * Entonces Carol sabe que puede enviar los fondos a Bob si Bob encuentra el secreto `R`, utiliza el hash de Alicia y crea un contrato `HTLC` por la cantidad de 2001 sats y le dice Bob: "Te pagaré si puedes producir la preimagen de H en los siguientes 4 bloques", ósea el secreto `R`.
 * Una vez que Bob encuentre `R`, Carol podrá desbloquear los fondos y cobrar la parte que le corresponde. Bob con conocimiento del secreto `R`, hace lo mismo, usa ese hash para crear un contrato `HTLC` por la cantidad de 2001 sats para enviárselo a Dave, y como Dave tiene el conocimiento de R puede desbloquear los 2000 sats y Bob cobrar la parte que le corresponde. 
 
-![Financiación](/media/flujo-pago.png)
+![Financiación](/images/flujo-pago.png)
 
 #### Así que con el flujo de información anterior tenemos.
 
