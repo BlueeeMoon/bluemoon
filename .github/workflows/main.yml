@@ -11,7 +11,7 @@ jobs:
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@master
         env:
-          # Target branch
+          # Target branch data
           PAGES_BRANCH: blue-page
           # Provide personal access token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
