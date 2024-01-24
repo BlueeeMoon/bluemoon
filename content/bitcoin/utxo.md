@@ -15,7 +15,7 @@ taxonomies:
 
 Gracias a la anlogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.
 
-![Infografía](/static/images/infografia.png)
+<img src="/static/images/infografia.png"/> 	
 
 ### Aquí el tweet
 
