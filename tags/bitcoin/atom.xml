@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title> - Bitcoin</title>
+    <link rel="self" type="application/atom+xml" href="https://blueeemoon.github.io/bluemoon/tags/bitcoin/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-11-13T11:35:41.496+00:00</updated>
+    <id>https://blueeemoon.github.io/bluemoon/tags/bitcoin/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Mapa de Bitcoin y Lightning.</title>
+        <published>2022-11-13T11:35:41.496+00:00</published>
+        <updated>2022-11-13T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/recursos/map/"/>
+        <id>https://blueeemoon.github.io/bluemoon/recursos/map/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/recursos/map/">&lt;h2 id=&quot;elige-el-lugar-mas-cercano-a-tu-ubicacion&quot;&gt;Elige el lugar más cercano a tu ubicación.&lt;&#x2F;h2&gt;
+&lt;h4 id=&quot;en-este-mapa-podras-encontrar-lugares-donde-puedas-hacer-compras-con-bitcoin-ya-sea-en-lightning-o-en-onchain&quot;&gt;En este mapa podrás encontrar lugares donde puedas hacer compras con bitcoin ya sea en lightning o en onchain.&lt;&#x2F;h4&gt;
+&lt;p&gt;Si deseas hacer una donación a los desarrolladores puedes hacerlo en el siguiente &lt;a href=&quot;https:&#x2F;&#x2F;btcmap.org&#x2F;support-us&quot;&gt;enlace&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;iframe
+	id=&quot;btcmap&quot;
+	title=&quot;BTC Map&quot;
+	width=&quot;900&quot;
+	height=&quot;700&quot;
+	allowfullscreen=&quot;true&quot;
+	allow=&quot;geolocation&quot;
+	src=&quot;https:&#x2F;&#x2F;btcmap.org&#x2F;map?onchain&amp;lightning&quot;
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;&lt;strong&gt;Espero que esta información sea de utilidad.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Juguemos con blockclock mini.</title>
+        <published>2022-05-24T11:35:41.496+00:00</published>
+        <updated>2022-05-24T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/"/>
+        <id>https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/">&lt;head&gt;
+  &lt;!-- Insert ONE of the below &lt;script&gt; tags before your closing &lt;&#x2F;head&gt; tag. --&gt;
+    &lt;!-- NOTE: BLOCKCLOCK is a registered trademark of Coinkite Inc. --&gt;
+    &lt;script src=&quot;https:&#x2F;&#x2F;moscowtime.xyz&#x2F;widget-with-frame.js&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script src=&quot;https:&#x2F;&#x2F;moscowtime.xyz&#x2F;widget-no-frame.js&quot;&gt;&lt;&#x2F;script&gt; 
+&lt;&#x2F;head&gt;
+&lt;div
+  id=&quot;blockclock-container&quot;
+  class=&quot;moscowtime usdprice blockheight interval-3000&quot;
+  style=&quot;max-width: 700px&quot;
+&gt;&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;que-es-blockclock-mini&quot;&gt;¿Qué es BLOCKCLOCK mini?&lt;&#x2F;h3&gt;
+&lt;p&gt;Es un reloj Bitcoin, fabricado por &lt;a href=&quot;https:&#x2F;&#x2F;store.coinkite.com&#x2F;store&#x2F;block-clock&quot;&gt;Coinkite&lt;&#x2F;a&gt; que lo cataloga como un “artículo de larga duración” de 7 dígitos, cuesta USD 399 dólares y sirve también para otras criptomonedas, muestra el valor en tiempo real de Bitcoin, o cualquier otra criptomoneda que le pidas, además del último bloque minado y la hora, esto en base a la configuración que le des.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;por-que-la-hora-de-moscu-en-este-widget&quot;&gt;¿Por qué la hora de Moscú en este Widget?&lt;&#x2F;h3&gt;
+&lt;p&gt;Si preguntas la hora en Twitter probablemente te digan: &amp;quot;Es hora de Moscú&amp;quot;. Esto se debe porque el fundador y CEO de Twitter, Jack Dorsey, transmitía en vivo desde su casa ante las sesiones del congreso de Estados Unidos sobre fake news que han influido en las elecciones norteamericanas y en la opinión pública, en los últimos años, cuando se destacó en el fondo un objeto en forma de reloj, llamando la atención y creando interés sobre el dispositivo.&lt;&#x2F;p&gt;
+&lt;p&gt;El investigador en ciberseguridad Chris Vickery vio que algo no estaba bien, el reloj marcaba &amp;quot;1952&amp;quot;, lo que era extraño para la supuesta ubicación de Jack pues se mostraba que el sol aún estaba. Entoces si no estaba en Moscú, ¿qué quizó dar a enter Jack?. Vickery consideró que fue un tipo señal en &amp;quot;código morse&amp;quot;, una forma de señalar los vínculos de Rusia con la desinformación en Estados Unidos.&lt;&#x2F;p&gt;
+&lt;p&gt;Después de este suceso los Bitcoiners usan &amp;quot;Moscú time&amp;quot; indistintamente con la tasa de conversión de USD a sat, así que cuando Bitcoin sube, la hora de Moscú baja y cuando la hora llegue a cero se producirá la llamada &lt;a href=&quot;https:&#x2F;&#x2F;nakamotoinstitute.org&#x2F;mempool&#x2F;hyperbitcoinization&#x2F;&quot;&gt;hiperbitcoinización.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Jack es una gran fanático del Bitcoin. Un dato interesante sobre Jack es que dijo en 2018 que cree que Bitcoin se convertirá en la moneda única del mundo dentro de 10 años.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;como-instalar-el-widget-de-blockclock&quot;&gt;¿Cómo instalar el Widget de BLOCKCLOCK?&lt;&#x2F;h3&gt;
+&lt;p&gt;Puedes encontrar el Widget &lt;a href=&quot;https:&#x2F;&#x2F;moscowtime.xyz&quot;&gt;aquí&lt;&#x2F;a&gt;, es muy fácil de configurar, solo necesitas copiar unas cuantas líneas de código y listo, espero esta información te haya sido de gran utilidad y puedas instalar tu Widget en tu sitio Web si así lo deseas.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero haya sido infromación de utilidad. &lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Conceptos clave.</title>
+        <published>2022-05-24T11:35:41.496+00:00</published>
+        <updated>2022-05-24T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/"/>
+        <id>https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/">&lt;h3 id=&quot;conceptos-clave&quot;&gt;Conceptos Clave.&lt;&#x2F;h3&gt;
+&lt;p&gt;Si estás aquí es porque quieres aprender acerca de Bitcoin, asi que definiré los más importantes de forma simple basados en algunas investigaciones. Me gusta que todo sea de la forma más simple para comprenderlo de la misma manera, ¡comencemos!&lt;&#x2F;p&gt;
+&lt;h5 id=&quot;direccion&quot;&gt;Dirección&lt;&#x2F;h5&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero que esta información sea de utilidad. &lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>¿Qué es Bitcoin?</title>
+        <published>2022-05-24T11:35:41.496+00:00</published>
+        <updated>2022-05-24T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/"/>
+        <id>https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/">&lt;h3 id=&quot;introduccion&quot;&gt;Introducción&lt;&#x2F;h3&gt;
+&lt;p&gt;Bitcoin, es una moneda digital, un sistema de pago que se ejecuta por un software disponible para toda la gente, es decir es de código abierto y está constantemente mejorándose y actualizándose gracias a los desarrolladores que están trabajando en ello, así que tú puedes descargar el software y ejecutarlo para tu propio uso, es fácilmente accesible ya que puede ejecutarse sobre una amplia variedad de dispositivos, incluyendo laptops y Smartphone´s,&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando tú descargas el software de Bitcon, estás contribuyendo a que las reglas de Bitcoin se cumplan.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin no solo es dinero digital, es un activo, una red internacional de pagos descentralizada, es decir; no lo sustenta ningún gobierno, ni tampoco los bancos logrando con esto, una revolución tecnológica con posibilidades infinitas para la humanidad ¿por qué?, porque Bitcoin ya esta camabiando el sistema financiero, social y político, estamos viviendo un momento histórico.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin vive en bits, es dinero digital, es como los dólares, los pesos o los euros, pues permite el intercambio de bienes y servicios, puedes enviar dinero a personas y organizaciones y también permite el resguardo de valor y funciona en base al consenso de muchos participantes, Andreas Antonopoulos, dice en su libro Internet del dinero: Bitcoin es el Dinero de la Gente, pues es abierto y global ya que todo el mundo lo puede utilizar y no tiene fronteras que lo detengan, es rápido y seguro, así que Bitcoin es nuestro dinero.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;quien-creo-bitcoin&quot;&gt;¿Quién creo Bitcoin?&lt;&#x2F;h3&gt;
+&lt;p&gt;Esto funciona gracias a un hombre identificado con el seudónimo de Satoshi Nakamoto quien publicara un documento titulado &lt;a href=&quot;https:&#x2F;&#x2F;bitcoin.org&#x2F;files&#x2F;bitcoin-paper&#x2F;bitcoin_es_latam.pdf&quot;&gt;Bitcoin: Un Sistema de Dinero Electrónico Peer-to-Peer&lt;&#x2F;a&gt; de nueve páginas, el 1ª de noviembre de 2008, donde aseguraba que había encontrado la forma de crear una red descentralizada sin el control de una autoridad, que no necesita permiso de un gobierno, banco o corporación para usarla, es decir, crear nuestro propio dinero, esto en base al movimiento Cypherpunk un grupo de personas quienes cimentaron la columna vertebral de lo que hoy es Bitcoin donde se sustentaba la importancia de la privacidad y la libertad a través de la criptografía, matemáticas, informática, filosofía y política, sin ellos Bitcoin no existiría. Puedes acceder al manifiesto Cypherpunk &lt;a href=&quot;https:&#x2F;&#x2F;nakamotoinstitute.org&#x2F;cypherpunk-manifesto&#x2F;&quot;&gt;aquí.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Satoshi Nakamoto se retiró del público en abril de 2011, ni Satoshi Nakamoto ni nadie más posee control sobre el sistema Bitcoin, el cual opera basado en principios matemáticos completamente transparentes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;cuantas-monedas-habra&quot;&gt;¿Cuántas monedas habrá?&lt;&#x2F;h3&gt;
+&lt;p&gt;El suministro de esta moneda se define por su protocolo, es decir; solo 21 millones de bitcoins llegaran a existir, esperando que el último sea minado para el año 2140.&lt;&#x2F;p&gt;
+&lt;p&gt;Se podría pensar que estos 21 millones son insuficientes para la población mundial, sin embargo, es altamente divisible, la denominación más pequeña es 0.00000001 BTC (10 -8 BTC), y esta denominación es llamada Satoshi, en honor a su creador, así que en un Bitcoin existen 100 millones de estos satoshis, cuando se llegue a los 21 millones habrán un total de 2100 trillones de satoshis.&lt;&#x2F;p&gt;
+&lt;p&gt;Para todos aquellos que empiezan a conocer Bitcoin, esto puede ser un poco confuso, sin embargo conforme vas cayendo en la madriguera del conejo querrás aprender más. &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;como-trasciende-fronteras-bitcoin&quot;&gt;¿Cómo trasciende fronteras Bitcoin?&lt;&#x2F;h3&gt;
+&lt;p&gt;Es una moneda no política (no depende de ninguna institución centralizada).&lt;&#x2F;p&gt;
+&lt;p&gt;En la actualidad millones de personas cuentan con acceso a internet, con Bitcoin puedes ser parte de la economía internacional desde cualquier parte del mundo, sin el control del gobierno y con comisiones muy bajas, sin requisitos gubernamentales ya que solo necesitas descargar una aplicación para formar parte de la economía, imagínate el poder de conectar a miles de personas en diferentes partes del mundo para hacer transacciones monetarias sin que nadie ejerza control total sobre ello, Bitcoin es la creación más grande que ha tenido la humanidad.&lt;&#x2F;p&gt;
+&lt;p&gt;En pocos segundos los seres humanos pueden hacer transacciones monetarias grandes o pequeñas a través de la red de Bitcoin, como si enviarás un email donde no hay nadie entre el emisor y el receptor, y este es solo el principio pues con Bitcoin será posible la extinción de dominio, proteger la privacidad y mantener la seguridad tanto de los individuos como de las organizaciones así como tener libertad financiera, la dignidad humana, un gran impacto social en los países en vía de desarrollo y mucho más.&lt;&#x2F;p&gt;
+&lt;p&gt;Existen muchas maneras de obtener Bitcoin, pues es dinero, comprándolo en cajeros, a otras personas o en plataformas online como hodlhodl o Bisq, otra manera de obtenerlo es ganándolo, vendiendo bienes o servicios, o jugando, existen muchas aplicaciones que te permiten ganar en satoshis, con Bitcoin tienes la facilidad de lograr esto mediante teléfonos inteligentes que harán estas transacciones rápidas y seguras, así que Bitcoin es portable.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;que-wallet-es-recomendada-para-empezar&quot;&gt;¿Qué wallet es recomendada para empezar?&lt;&#x2F;h3&gt;
+&lt;p&gt;Considero que para comenzar a utilizar Bitcoin es recomdable utilizar Lightning para una mejor experiencia, puede consultar acerca de este tema en el apartado exclusivo de Lightning. Aquí dejo algunas en orden de facilidad de uso, que cada cual elija e investiga sobre la que cubra sus necesidades.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.walletofsatoshi.com&#x2F;&quot;&gt;Wallet of Satoshi&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;muun.com&#x2F;es&#x2F;&quot;&gt;Muun&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bluewallet.io&#x2F;&quot;&gt;BlueWallet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;breez.technology&#x2F;&quot;&gt;Breez&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;&lt;strong&gt;Espero que esta información sea de utilidad.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>UTXO</title>
+        <published>2022-05-24T11:35:41.496+00:00</published>
+        <updated>2022-05-24T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/bitcoin/utxo/"/>
+        <id>https://blueeemoon.github.io/bluemoon/bitcoin/utxo/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/utxo/">&lt;h3 id=&quot;utxo&quot;&gt;UTXO&lt;&#x2F;h3&gt;
+&lt;p&gt;Gracias a la anlogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.&lt;&#x2F;p&gt;
+&lt;img src=&quot;&#x2F;static&#x2F;images&#x2F;infografia.png&quot;&#x2F;&gt; 	
+&lt;h3 id=&quot;aqui-el-tweet&quot;&gt;Aquí el tweet&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;es&quot; dir=&quot;ltr&quot;&gt;Cuando recién escuché sobre UTXO&amp;#39;s no lograba comprender porqué las transacciones incluyen cambio devuelto hacia uno, como si pagáramos en efectivo en la tienda de la esquina.&lt;br&gt;&lt;br&gt;Los humanos somos mas buenos imaginando cosas físicas, así que creo que esta analogía ayuda:&lt;&#x2F;p&gt;&amp;mdash; thebatzuk⚡ (@thebatzuk) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;thebatzuk&#x2F;status&#x2F;1445132759211679746?ref_src=twsrc%5Etfw&quot;&gt;October 4, 2021&lt;&#x2F;a&gt;&lt;&#x2F;blockquote&gt; &lt;script async src=&quot;https:&#x2F;&#x2F;platform.twitter.com&#x2F;widgets.js&quot; charset=&quot;utf-8&quot;&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Pódcast&#x27;s y vídeos acerca de Bitcoin y Lightning.</title>
+        <published>2022-05-24T11:35:41.496+00:00</published>
+        <updated>2022-05-24T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/recursos/podcast/"/>
+        <id>https://blueeemoon.github.io/bluemoon/recursos/podcast/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/recursos/podcast/">&lt;h3 id=&quot;video-sobre-como-montar-tu-nodo-en-un-maquina-the-bitcoin-machine&quot;&gt;Vídeo sobre como montar tú nodo en un máquina The Bitcoin Machine.&lt;&#x2F;h3&gt;
+&lt;iframe 
+	width=&quot;700&quot; 
+	height=&quot;400&quot; 
+	src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Pc4SVlTmj7Y&quot; 
+	title=&quot;YouTube video player&quot; 
+	frameborder=&quot;0&quot; 
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+	allowfullscreen
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h3 id=&quot;video-creado-originalmente-por-el-usuario-de-x-tip-nz&quot;&gt;Vídeo creado originalmente por el usuario de X &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tip_nz&quot;&gt;@TIP_NZ&lt;&#x2F;a&gt;.&lt;&#x2F;h3&gt;
+&lt;p&gt;Este vídeo es un proyecto colaborativo que muestra el porque fue creado &lt;strong&gt;Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Voces:&lt;&#x2F;strong&gt; una servidora y Alfre Mancera&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Traducción:&lt;&#x2F;strong&gt; Arkad y MrRabbitHodl&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Montaje:&lt;&#x2F;strong&gt; GUERRILLA&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;iframe 
+	width=&quot;700&quot; 
+	height=&quot;400&quot; 
+	src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;7FYc1igSIGg?si=MX5IzPy8xWVL_NY5&quot; 
+	title=&quot;YouTube video player&quot; 
+	frameborder=&quot;0&quot; 
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+	allowfullscreen
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero que esta información sea de utilidad. &lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Privacidad en Bitcoin</title>
+        <published>2021-06-18T11:35:41.496+00:00</published>
+        <updated>2021-06-18T11:35:41.496+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blueeemoon.github.io/bluemoon/publications/seguridad/"/>
+        <id>https://blueeemoon.github.io/bluemoon/publications/seguridad/</id>
+        
+        <content type="html" xml:base="https://blueeemoon.github.io/bluemoon/publications/seguridad/"></content>
+        
+    </entry>
+</feed>
