@@ -26,6 +26,7 @@ email = ""
 first_name = "Blue"
 last_name = "Moon"
 address = "De la luna"
+assets_dir = "static"
 
 katex = false
 show_about = true
@@ -34,3 +35,4 @@ show_blog = true
 show_bitcoin = true
 show_lightning = true
 show_recursos = true
+
