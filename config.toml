@@ -5,7 +5,7 @@ base_url = "https://blueeemoon.github.io/bluemoon/"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-generate_feed = true
+generate_feeds = true
 build_search_index = true
 taxonomies = [
   { name = "tags", feed = true },
