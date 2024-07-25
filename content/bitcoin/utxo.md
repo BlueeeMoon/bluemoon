@@ -15,7 +15,8 @@ taxonomies:
 
 Gracias a la anlogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.
 
-<img src="{{ get_url(path="images/infografia.png") }}"/>
+<img src="/static/images/infografia.png" alt="infografia"/>
+
 
 ### Aquí el tweet
 
