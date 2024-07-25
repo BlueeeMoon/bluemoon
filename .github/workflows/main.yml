@@ -20,3 +20,5 @@ jobs:
           PAGES_BRANCH: blue-page
           # Provide personal access token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          publish_dir: ./public
+          destination_dir: .
