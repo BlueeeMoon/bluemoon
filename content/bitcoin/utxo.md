@@ -13,7 +13,7 @@ taxonomies:
 
 ### UTXO 
 
-Gracias a la anlogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.
+Gracias a la analogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.
 
 ![infografia](https://raw.githubusercontent.com/BlueeeMoon/bluemoon/master/static/images/infografia.png)
 
