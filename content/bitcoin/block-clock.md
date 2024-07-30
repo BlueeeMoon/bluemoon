@@ -13,10 +13,16 @@ taxonomies:
     - bitcoin
 ---
 <head>
-  <!-- Insert ONE of the below <script> tags before your closing </head> tag. -->
-    <!-- NOTE: BLOCKCLOCK is a registered trademark of Coinkite Inc. -->
-    <script src="https://moscowtime.xyz/widget-with-frame.js"></script>
-    <script src="https://moscowtime.xyz/widget-no-frame.js"></script> 
+  <!-- Import the required widget code and styles. -->
+  <script src="https://moscowtime.xyz/widget.js"></script>
+  <!-- When the window has finished loading, mount the widget in its appropriate place. -->
+  <script>
+    let blockClock;
+    window.onload = function () {
+      blockClock = mountBlockClock();
+    };
+  </script>
+  <!-- NOTE: BLOCKCLOCK is a registered trademark of Coinkite Inc. -->
 </head>
 
 <div
