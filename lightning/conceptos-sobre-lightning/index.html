@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>Conceptos básicos sobre Lightning Network.<a href="https:&#x2F;&#x2F;lightning.network&#x2F;" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h3 id="conceptos-basicos-sobre-lightning-network">Conceptos básicos sobre Lightning Network.</h3>
+<p>Hablar sobre Lightning Network es un tema muy extenso y requiere práctica, así que solo abarcaremos los conceptos necesarios para su comprensión, posteriormente conforme vayas aprendiendo irás conociendo más, esto ya dependerá de tu propio interés.</p>
+<p>Antes que nada es importante diferenciar dos conceptos importantes: transacción y pago; en Bitcoin cuando se transfiere valor a todos en la cadena de bloques se le denomina transacción y en Lightning Network lo llamamos pagos, estos pagos se enrutan a través de los canales siguiendo una ruta.</p>
+<p>Para hacer un “pago” con Lihtning Network no se utiliza la cadena de bloques y los pagos enviados a través de canales de pago se denominan pagos fuera de la cadena de bloques.</p>
+<h3 id="que-es-un-nodo">¿Qué es un nodo?</h3>
+<p>Un nodo en Lightning Network es simplemente una aplicación de software que se ejecuta en una computadora y que participa dentro de la red comunicándose de igual a igual con otros nodos Lightning Network que crean la red también. Son monederos que envían pagos y reciben pagos y acceden a la cadena de bloques de Bitcoin para asegurar los fondos utilizados para los pagos. Más adelante veremos cómo funciona.</p>
+<h3 id="que-es-un-canal-de-pago">¿Qué es un canal de pago?</h3>
+<p>Los canales de pago son el componente principal de Lightning Network y son simplemente una conexión directa entre dos nodos que tienen una relación financiera, socios de canal y que funcionan a través de transacciones de apertura y cierre en la cadena de bloques.</p>
+<h4 id="a-que-se-refiere-el-termino-relacion-financiera-o-transaccion-de-financiacion">¿A qué se refiere el término relación financiera o transacción de financiación?</h4>
+<p>Cuando se crea una transacción de financiación, se crea un canal, en esta transacción que contiene una sola entrada se asigna una cantidad de fondos en millisatoshis y se envían a una dirección multifirma (2 de 2) en la cadena de bloques donde ambos socios del canal controlan ambas partes, es decir; ambos tienen una clave para esta dirección multifirma que han firmado y pueden hacer pagos con esta dirección multifirma dentro del canal sin hacer transacciones en la cadena de bloques. Esta transacción determinará el saldo del canal.</p>
+<p>Cuando se abre un canal de Lightning Network el nodo que inicia la apertura puede agregar fondos, así que el saldo del canal pertenece al nodo que abrió el canal, creando con ello un canal desequilibrado, sin embargo existen canales de doble financiación donde ambos nodos aportan fondos en la transacción, así que el balance de canal se divide entre ambos nodos.</p>
+<p>El primero canal de doble financiación que se abrió fue en el bloque 681753 a través de la implementación c-lightning en la transacción:</p>
+<p><code>91538cbc4aca767cb77aa0690c2a6e710e095c8eb6d8f73d53a3a29682cb7581</code></p>
+<p>La misma que puedes ver <a href="https://blockstream.info/tx/91538cbc4aca767cb77aa0690c2a6e710e095c8eb6d8f73d53a3a29682cb7581">aquí</a></p>
+<h4 id="ahora-veamos-un-caso-practico">Ahora veamos un caso práctico:</h4>
+<p>Alicia y Bob deciden abrir un canal de pago de <code>50k</code> por parte de ambos, así que se abrirá por la cantidad de <code>100k</code>, que será la cantidad que se asigne a esta dirección multifirma y será el saldo del canal.</p>
+<p>Así que una vez confirmada la transacción en la cadena de bloques ellos estarán listos para comenzar a hacer pagos dentro del canal creando transacciones de compromiso firmadas por ambos cuantas veces quieran, es claro que estas transacciones serán determinadas por el saldo del canal. En este punto el estado de este canal es que Alicia tiene 50k de su lado y Bob también.</p>
+<p>Una vez que el saldo dentro del canal se mueve de un lugar a otro, el estado cambiará y se invalidará, es decir; se comenzó con <code>50k</code> de cada lado del canal, si alguna de las partes envía por ejemplo 10k, el estado ahora será <code>40k/60k</code> y así por cada pago que se haga.</p>
+<p>Con esta dirección multifirma se garantizará que ninguna de las dos partes será deshonesta al transmitir un estado anterior, la dirección multifirma devuelve los fondos a Alice y Bob de acuerdo con la cantidad de canal acordada.</p>
+<h4 id="a-que-se-refiere-el-termino-enrutamiento">¿A qué se refiere el termino enrutamiento?</h4>
+<p>En Lightning Network los pagos se enrutan a través de uno o más canales de pago siguiendo un camino del remitente al destinatario.</p>
+<h4 id="gracias">Gracias.</h4>
+<p>En el siguiente artículo veremos más a detalle sobre <code>HTLC</code>(Hash Time-Locked Contracts).</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>
