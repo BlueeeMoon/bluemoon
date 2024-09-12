@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>El problema de los generales bizantinos.<a href="https:&#x2F;&#x2F;es.wikipedia.org&#x2F;wiki&#x2F;Problema_de_los_generales_bizantinos" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h3 id="el-problema-de-los-generales-bizantinos">El problema de los generales bizantinos.</h3>
+<p>Es un problema fundamental en el campo de la informática, específicamente en el estudio de los sistemas distribuidos y la tolerancia a fallos y es crucial en el diseño de sistemas distribuidos, ya que muchos sistemas modernos están compuestos por múltiples nodos que deben coordinarse para funcionar correctamente. Fue hecho por <strong>Robert Shostak</strong> y desarrollado con <strong>Leslie Lamport</strong> y <strong>Marshall Pease en 1982</strong>.</p>
+<p>Una de las soluciones más conocidas al problema de los generales bizantinos es el algoritmo de consenso bizantino <strong>(Byzantine Fault Tolerance, BFT)</strong>. Este tipo de algoritmos permite que los sistemas distribuidos lleguen a un consenso a pesar de la presencia de fallos bizantinos, es decir, fallos en los que los componentes pueden comportarse de manera arbitraria o maliciosa.</p>
+<p><strong>Bitcoin</strong> no utiliza directamente el modelo clásico de tolerancia a fallos bizantinos <strong>(BFT)</strong> en su algoritmo de consenso. En cambio, utiliza un enfoque diferente conocido como Prueba de Trabajo <strong>(Proof of Work, PoW)</strong>.</p>
+<h4 id="lo-podemos-representar-con-la-siguiente-analogia">Lo podemos representar con la siguiente analogía:</h4>
+<p>Imaginemos una antigua ciudad griega Bizancio que quiere ser atacada por un grupo de generales que tienen su campamento con sus respectivas tropas en distintos puntos rodeándola, pondremos como ejemplo que son siete, así que la mejor manera de atacarla es que lo hagan al mismo tiempo.</p>
+<p>Esto implica que todos se pongan de acuerdo, es decir; que lleguen a un "consenso", así que cada general podría mandar un mensaje por medio de un mensajero a otro campamento con las instrucciones para el ataque, sin embargo, este mensajero podría ser un traidor o la información podría ser interceptada.</p>
+<p>Así que tenemos seis generales con su campamento cada uno.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span> El campamento 1 manda a un mensajero al campamento 2 con el mensaje: Atacar al amanecer, 5:00 am
+</span><span> El campamento 2 manda a un mensajero al campamento 3 con el mensaje: Atacar al amanecer, 5:00 am
+</span><span> El campamento 3 manda a un mensajero al campamento 4 con el mensaje: Atacar al amanecer, 5:00 am
+</span><span> El campamento 4 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+</span><span> El campamento 5 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+</span><span> El campamento 6 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+</span></code></pre>
+<p>Como puedes darte cuenta el mensaje que envía el campamento 4 al 5 no es correcto, así que aquí ya no podría suceder el ataque cortinado.</p>
+<p>Ahora esta analogía la llevaremos a los sistemas informáticos, específicamente a <strong>Bitcoin.</strong></p>
+<p>La siguiente ilustración representa a los generales como nodos alrededor de una ciudad (el libro mayor), con algunos generales honestos (marcados con un <strong>check verde</strong>) y algunos traidores (marcados con una <strong>X roja</strong>). Cada general está conectado con líneas de comunicación.</p>
+<p>También se muestra un minero con un pico resolviendo la <strong>Prueba de Trabajo</strong> para proponer un nuevo bloque de transacciones, destacando la importancia de la regla de la mayoría para la aceptación del bloque.</p>
+<p><img src="https://raw.githubusercontent.com/BlueeeMoon/bluemoon/master/static/images/bizantinos.png" alt="bizantinos" /></p>
+<p>El problema de los generales bizantinos no se había resuelto hasta la llegada de <strong>Bitcoin</strong>, especificamente hasta que lo resolvió Satoshi Nakamoto. Como sabes el software de <strong>Bitcoin</strong> es libre, así que puedes descargarlo. Todas las personas que ejecutan este software tienen una copia exacta de la cadena de bloques de manera local en sus computadoras. Con esto podemos deducir que si un nodo envía un mensaje a la red es validado y por ende todos los demás nodos tiene la misma información.</p>
+<p>Con lo mencionado acerca de los generales que podrían tener un mensajero traidor o malicioso se refiere a que los nodos podrían transmitir información errónea, quizás que falle un algoritmo y se produzca un error, de comunicación, o en su defecto sí exista un nodo malicioso. Así que la clave para solucionar este fallo es el consenso, es decir; una comunicación asertiva.</p>
+<h4 id="como-se-hace-esto">¿Cómo se hace esto?</h4>
+<p>Se hace a partir de definir un conjunto de reglas aplicables a todos, en las cuales se identifica a cada nodo de forma inequívoca.</p>
+<p>Cuando <strong>Bob</strong> hace una transacción cada nodo empieza a compilar esta transacción en un estado de <em><strong>transacción no confirmada</strong></em>.
+Esta transacción pasa por un proceso de minería: <strong>la prueba de trabajo</strong>, verificando que el hash de la transacción sea correcto, si lo es lo incluye en el bloque.
+La transacción pasa del estado <em><strong>transacción no confirmada</strong></em> a <em><strong>transacción confirmada</strong></em> para cada nodo.
+Con esto podemos estar seguros de que la transacción sea tomada como valida y llegar al consenso.</p>
+<p>Así que en <strong>Bitcoin</strong> las reglas son iguales para todos.</p>
+<h4 id="gracias">Gracias.</h4>
+<p>Espero sea de utilidad esta información.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>
