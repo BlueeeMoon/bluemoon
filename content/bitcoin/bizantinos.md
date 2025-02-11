@@ -2,7 +2,6 @@
 title: El problema de los generales bizantinos. 
 date: 2024-08-06T11:35:41.496Z
 extra:
-  featured: true
   link: https://es.wikipedia.org/wiki/Problema_de_los_generales_bizantinos
   image: /media/mineria.png
 description: Comprender el problema de los generales biznatinos.
