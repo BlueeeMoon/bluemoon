@@ -2,7 +2,6 @@
 title: Pódcast's y vídeos acerca de Bitcoin y Lightning. 
 date: 2022-05-24T11:35:41.496Z
 extra:
-  featured: true
   link: https://thebitcoinmachines.com/
   image: /media/radio.png
 description: Recursos sobre <strong>Bitcoin</strong> y <strong>Lightning</strong> 
