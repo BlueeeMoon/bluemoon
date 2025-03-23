@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title> - lightning</title>
+      <link>https://blueeemoon.github.io/bluemoon/</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://blueeemoon.github.io/bluemoon/tags/lightning/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 27 Feb 2025 11:35:41 +0000</lastBuildDate>
+      <item>
+          <title>Canales zombies.</title>
+          <pubDate>Thu, 27 Feb 2025 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/recursos/zombies/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/recursos/zombies/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/recursos/zombies/">&lt;p&gt;Guía de recuperaciòn de canales zombies. Esta guía te ayudará a este proceso paso a paso.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;requisitos-previos&quot;&gt;Requisitos Previos&lt;&#x2F;h3&gt;
+&lt;p&gt;Antes de comenzar con la configuración, asegúrate de tener los siguientes requisitos previos:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Haber leído este &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lightninglabs&#x2F;chantools&#x2F;blob&#x2F;master&#x2F;doc&#x2F;zombierecovery.md&quot;&gt;repositorio&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Palabras semilla de ambos pares.&lt;&#x2F;li&gt;
+&lt;li&gt;Estar en contacto con el par o pares de tus canales (en este punto ya habrán negociado un estado de cierre de los canales.)&lt;&#x2F;li&gt;
+&lt;li&gt;Tener el archivo de coincidencia &lt;strong&gt;json&lt;&#x2F;strong&gt;, en el documento viene como obtenerlo.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Formato:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;node1&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;identity_pubkey&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;03xxxxxx&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;contact&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;contact information for node 1, not needed by chantools itself&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    },
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;node2&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;identity_pubkey&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;03yyyyyy&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;contact&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;contact information for node 2, not needed by chantools itself&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    },
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;channels&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: [
+&lt;&#x2F;span&gt;&lt;span&gt;        {
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;short_channel_id&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;61xxxxxxxxxxxxx (optional, numerical channel ID, can be found on 1ml.com)&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;chan_point&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;lt;txid&amp;gt;:&amp;lt;output_index&amp;gt; (also called channel point on 1ml.com)&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;address&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;bc1q...... (the channel&amp;#39;s output address on chain, find out by looking up the channel point on a block explorer)&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;capacity&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;123456
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    ]
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;paso-1-instalar-chantools&quot;&gt;Paso 1: Instalar Chantools&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Visita el &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lightninglabs&#x2F;chantools&quot;&gt;repositorio oficial de chantools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Selecciona la versión adecuada para tu sistema operativo.&lt;&#x2F;li&gt;
+&lt;li&gt;Sigue las intrucciones e instala.&lt;&#x2F;li&gt;
+&lt;li&gt;Verifica la instalación con: &lt;code&gt;chantools --help&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;This tool provides helper functions that can be used rescue
+&lt;&#x2F;span&gt;&lt;span&gt;funds locked in lnd channels in case lnd itself cannot run properly anymore.
+&lt;&#x2F;span&gt;&lt;span&gt;Complete documentation is available at
+&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;github.com&#x2F;lightninglabs&#x2F;chantools&#x2F;.
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Usage:
+&lt;&#x2F;span&gt;&lt;span&gt;  chantools [command]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;nota&quot;&gt;Nota:&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;strong&gt;Ambos nodos deben hacerlo.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;paso-2-archivo-json&quot;&gt;Paso 2: Archivo json&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Crear&#x2F;subir el archivo &lt;strong&gt;json&lt;&#x2F;strong&gt; en algún directorio de tu preferencia.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;cd &#x2F;tmp&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Colocar el contenido del &lt;strong&gt;json&lt;&#x2F;strong&gt; recibido &lt;code&gt;vi match.json&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Generar una dirección de Bitcoin, en mi caso use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;curly60e&#x2F;pyblock&quot;&gt;PyBlock&lt;&#x2F;a&gt; para hacerla (puedes generarla como desees)&lt;&#x2F;li&gt;
+&lt;li&gt;Una vez que tengas la dirección ejecutar la siguiente instrucción (reemplazar bc1xxx por tu dirección):&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;chantools zombierecovery preparekeys --payout_addr bc1xxx --match_file &#x2F;tmp&#x2F;match.json
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;nota-1&quot;&gt;Nota:&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;strong&gt;Ambos nodos deberán hacerlo.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;paso-3-validar-archivos-y-preparar-tarifa&quot;&gt;Paso 3: Validar archivos y preparar tarifa.&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cuando se ejecuta la instrucción &lt;code&gt;chantools zombierecovery..&lt;&#x2F;code&gt; se genera un directorio llamado &lt;code&gt;results&lt;&#x2F;code&gt; en la ubicación donde te encuentras.&lt;&#x2F;li&gt;
+&lt;li&gt;Accede al directorio &lt;code&gt;cd results&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Ver el contenido &lt;code&gt;ls -lart&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;El directorio creo un archivo con el siguiente formato &lt;code&gt;preparedkeys-year-month-day-nodepuykey.json&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h1 id=&quot;nota-2&quot;&gt;Nota:&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;strong&gt;Ambos nodos deberán hacerlo.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;paso-4-juntar-archivos-json&quot;&gt;Paso 4: Juntar archivos json.&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Asegúrate de que tu par haya ejecutado el paso anterior.&lt;&#x2F;li&gt;
+&lt;li&gt;Alguno de los dos tendrá que compartir su archivo &lt;strong&gt;json&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Una vez que tenga alguno de los dos los archivos, deberá colocarlo en el directorio &lt;code&gt;results&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;paso-5-crear-oferta&quot;&gt;Paso 5: Crear oferta&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Seguramente ya verificaron la &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lightninglabs&#x2F;chantools&#x2F;blob&#x2F;master&#x2F;doc&#x2F;zombierecovery.md#read-me-first&quot;&gt;guía&lt;&#x2F;a&gt; donde deciden la forma de dividir el saldo del canal entre tú y tu par.&lt;&#x2F;li&gt;
+&lt;li&gt;Una vez que tomada la decisión, alguno de los dos deberá ejecutar la siguiente instrucción, el que tenga ambos archivos:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;chantools zombierecovery makeoffer \
+&lt;&#x2F;span&gt;&lt;span&gt;	--node1_keys preparedkeys-year-month-day-nodepuykey1.json \
+&lt;&#x2F;span&gt;&lt;span&gt;	--node2_keys preparedkeys-year-month-day-nodepuykey2.json \
+&lt;&#x2F;span&gt;&lt;span&gt;	--feerate 15
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Te pedirá tus palabras semillas:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Input your 24-word mnemonic separated by spaces:
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Si usas una frase para tus palabras semillas deberás introducirla, sino simplemente enter.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Input your cipher seed passphrase (press enter if your seed doesn&amp;#39;t have a passphrase):
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Te mostrará un mensaje como el siguiente: &lt;code&gt;Found keys for channel..&lt;&#x2F;code&gt; esto dependerá de los canales que vayas a recuperar.&lt;&#x2F;li&gt;
+&lt;li&gt;Si son tres canales por ejemplo, te mostrará tres bloques de dialogo donde tendrás que poner la cantidad de sats, no te preocupes, es muy intuitivo ya que muestra los siguientes datos:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Channel f006..................................................:1 (1 of 3):
+&lt;&#x2F;span&gt;&lt;span&gt;        Capacity: &amp;quot;cantidad&amp;quot; sat
+&lt;&#x2F;span&gt;&lt;span&gt;        Funding TXID: https:&#x2F;&#x2F;blockstream.info&#x2F;tx&#x2F; f006............................................
+&lt;&#x2F;span&gt;&lt;span&gt;        Channel info: https:&#x2F;&#x2F;1ml.com&#x2F;channel&#x2F; &amp;quot;short_channel_id&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        Channel funding address: &amp;quot;La dirección con la que se abrio el canal&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;		
+&lt;&#x2F;span&gt;&lt;span&gt;How many sats should go to you (&amp;quot;dirección&amp;quot;) before fees?: cantidad 
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Will send:
+&lt;&#x2F;span&gt;&lt;span&gt;        cantidad sats to our address (&amp;quot;dirección&amp;quot;) and
+&lt;&#x2F;span&gt;&lt;span&gt;        0 sats to the other peer&amp;#39;s address (&amp;quot;dirección&amp;quot;).
+&lt;&#x2F;span&gt;&lt;span&gt;		
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;Solo tendrás que colocar la cantidad. Esto se mostrará 3 veces ya que en este caso son tres canales.&lt;&#x2F;li&gt;
+&lt;li&gt;El resultado será un PSBT &lt;strong&gt;(&lt;em&gt;transacción de bitcoin parcialmente firmada&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt; firmado.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Done creating offer, please send this PSBT string to
+&lt;&#x2F;span&gt;&lt;span&gt;the other party to review and sign (if they accept):
+&lt;&#x2F;span&gt;&lt;span&gt;cHNidP8BAPYCAAAABWkfV1KJwCjcd+llYjb4UyM0nCLIn7X1FfRQOOc1........
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;paso-5-firmar-psbt-por-parte-de-la-contraparte&quot;&gt;Paso 5: Firmar PSBT por parte de la contraparte.&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;El par tendrá que firmar el PSBT.&lt;&#x2F;li&gt;
+&lt;li&gt;Envía la cadena hexadecimal obtenida para que la firme el par.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;chantools zombierecovery signoffer \
+&lt;&#x2F;span&gt;&lt;span&gt;	--psbt &amp;lt;offered_psbt_base64&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Una vez ejecutada la instrucción anterior, le pedirá las palabras semillas.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Input your 24-word mnemonic separated by spaces:
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Si usa una frase para sus palabras semillas deberá introducirla, sino simplemente enter.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Input your cipher seed passphrase (press enter if your seed doesn&amp;#39;t have a passphrase):
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Posteriormente mostrará el siguiente mensaje:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;The PSBT contains the following proposal:
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        Close 3 channels:
+&lt;&#x2F;span&gt;&lt;span&gt;        Channel 0 (&amp;quot;chan_point&amp;quot;:1), capacity &amp;quot;cantidad&amp;quot; sats
+&lt;&#x2F;span&gt;&lt;span&gt;        Channel 1 (&amp;quot;chan_point&amp;quot;:1), capacity &amp;quot;cantidad&amp;quot; sats
+&lt;&#x2F;span&gt;&lt;span&gt;        Channel 2 (&amp;quot;chan_point&amp;quot;), capacity &amp;quot;cantidad&amp;quot; sats
+&lt;&#x2F;span&gt;&lt;span&gt;       
+&lt;&#x2F;span&gt;&lt;span&gt;        Send &amp;quot;cantidad&amp;quot; sats to address &amp;quot;dirección generada en pasos anteriores&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        Total fees: &amp;quot;cantidad&amp;quot; sats
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Do you want to continue?
+&lt;&#x2F;span&gt;&lt;span&gt;Press &amp;lt;enter&amp;gt; to continue and sign the transaction or &amp;lt;ctrl+c&amp;gt; to abort:
+&lt;&#x2F;span&gt;&lt;span&gt;Success, we counter signed the PSBT and extracted the final
+&lt;&#x2F;span&gt;&lt;span&gt;transaction. Please publish this using any bitcoin node:
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;paso-5-transmitir-transaccion&quot;&gt;Paso 5: Transmitir transacción.&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Después de ejecutar &lt;code&gt;chantools zombierecovery signoffer...&lt;&#x2F;code&gt; el resultado será una transacción que no ha sido enviada a la red.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Se verá como esto: &lt;code&gt;02000000000105691f575289c028dc77e9656236f85323349c22c89fb5f515f45038e735e806f0010...&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Cualquiera de los dos pares podrá enviar la transacción a la red con el comando siguiente:&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt; bitcoin-cli sendrawtransaction 02000000000105691f575289c028dc77e9656236f85323349c22c89fb5f515f45038e735e806f0010... 
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;El resultado será el ID de la transacción.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;4d8c3f8239b63db649fd789f95ac5f.........
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Puedes verificar la transacción en cualquier explorador de bloques o en tu propio nodo.&lt;&#x2F;li&gt;
+&lt;li&gt;Ahora solo debes esperar a que sea confirmada.&lt;&#x2F;li&gt;
+&lt;li&gt;Una vez que pase esto, el saldo deberá estar de vuelta.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h1 id=&quot;nota-3&quot;&gt;Nota:&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;strong&gt;Los datos como: cantidad, chan_point, dirección,.., sustituyen los valores reales.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;¡Gracias! Si tienes alguna pregunta o sugerencia, no dudes en comunicármelo.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Conceptos básicos sobre Lightning Network.</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/lightning/conceptos-sobre-lightning/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/lightning/conceptos-sobre-lightning/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/lightning/conceptos-sobre-lightning/">&lt;h3 id=&quot;conceptos-basicos-sobre-lightning-network&quot;&gt;Conceptos básicos sobre Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Hablar sobre Lightning Network es un tema muy extenso y requiere práctica, así que solo abarcaremos los conceptos necesarios para su comprensión, posteriormente conforme vayas aprendiendo irás conociendo más, esto ya dependerá de tu propio interés.&lt;&#x2F;p&gt;
+&lt;p&gt;Antes que nada es importante diferenciar dos conceptos importantes: transacción y pago; en Bitcoin cuando se transfiere valor a todos en la cadena de bloques se le denomina transacción y en Lightning Network lo llamamos pagos, estos pagos se enrutan a través de los canales siguiendo una ruta.&lt;&#x2F;p&gt;
+&lt;p&gt;Para hacer un “pago” con Lihtning Network no se utiliza la cadena de bloques y los pagos enviados a través de canales de pago se denominan pagos fuera de la cadena de bloques.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;que-es-un-nodo&quot;&gt;¿Qué es un nodo?&lt;&#x2F;h3&gt;
+&lt;p&gt;Un nodo en Lightning Network es simplemente una aplicación de software que se ejecuta en una computadora y que participa dentro de la red comunicándose de igual a igual con otros nodos Lightning Network que crean la red también. Son monederos que envían pagos y reciben pagos y acceden a la cadena de bloques de Bitcoin para asegurar los fondos utilizados para los pagos. Más adelante veremos cómo funciona.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;que-es-un-canal-de-pago&quot;&gt;¿Qué es un canal de pago?&lt;&#x2F;h3&gt;
+&lt;p&gt;Los canales de pago son el componente principal de Lightning Network y son simplemente una conexión directa entre dos nodos que tienen una relación financiera, socios de canal y que funcionan a través de transacciones de apertura y cierre en la cadena de bloques.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;a-que-se-refiere-el-termino-relacion-financiera-o-transaccion-de-financiacion&quot;&gt;¿A qué se refiere el término relación financiera o transacción de financiación?&lt;&#x2F;h4&gt;
+&lt;p&gt;Cuando se crea una transacción de financiación, se crea un canal, en esta transacción que contiene una sola entrada se asigna una cantidad de fondos en millisatoshis y se envían a una dirección multifirma (2 de 2) en la cadena de bloques donde ambos socios del canal controlan ambas partes, es decir; ambos tienen una clave para esta dirección multifirma que han firmado y pueden hacer pagos con esta dirección multifirma dentro del canal sin hacer transacciones en la cadena de bloques. Esta transacción determinará el saldo del canal.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando se abre un canal de Lightning Network el nodo que inicia la apertura puede agregar fondos, así que el saldo del canal pertenece al nodo que abrió el canal, creando con ello un canal desequilibrado, sin embargo existen canales de doble financiación donde ambos nodos aportan fondos en la transacción, así que el balance de canal se divide entre ambos nodos.&lt;&#x2F;p&gt;
+&lt;p&gt;El primero canal de doble financiación que se abrió fue en el bloque 681753 a través de la implementación c-lightning en la transacción:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;91538cbc4aca767cb77aa0690c2a6e710e095c8eb6d8f73d53a3a29682cb7581&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;La misma que puedes ver &lt;a href=&quot;https:&#x2F;&#x2F;blockstream.info&#x2F;tx&#x2F;91538cbc4aca767cb77aa0690c2a6e710e095c8eb6d8f73d53a3a29682cb7581&quot;&gt;aquí&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;ahora-veamos-un-caso-practico&quot;&gt;Ahora veamos un caso práctico:&lt;&#x2F;h4&gt;
+&lt;p&gt;Alicia y Bob deciden abrir un canal de pago de &lt;code&gt;50k&lt;&#x2F;code&gt; por parte de ambos, así que se abrirá por la cantidad de &lt;code&gt;100k&lt;&#x2F;code&gt;, que será la cantidad que se asigne a esta dirección multifirma y será el saldo del canal.&lt;&#x2F;p&gt;
+&lt;p&gt;Así que una vez confirmada la transacción en la cadena de bloques ellos estarán listos para comenzar a hacer pagos dentro del canal creando transacciones de compromiso firmadas por ambos cuantas veces quieran, es claro que estas transacciones serán determinadas por el saldo del canal. En este punto el estado de este canal es que Alicia tiene 50k de su lado y Bob también.&lt;&#x2F;p&gt;
+&lt;p&gt;Una vez que el saldo dentro del canal se mueve de un lugar a otro, el estado cambiará y se invalidará, es decir; se comenzó con &lt;code&gt;50k&lt;&#x2F;code&gt; de cada lado del canal, si alguna de las partes envía por ejemplo 10k, el estado ahora será &lt;code&gt;40k&#x2F;60k&lt;&#x2F;code&gt; y así por cada pago que se haga.&lt;&#x2F;p&gt;
+&lt;p&gt;Con esta dirección multifirma se garantizará que ninguna de las dos partes será deshonesta al transmitir un estado anterior, la dirección multifirma devuelve los fondos a Alice y Bob de acuerdo con la cantidad de canal acordada.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;a-que-se-refiere-el-termino-enrutamiento&quot;&gt;¿A qué se refiere el termino enrutamiento?&lt;&#x2F;h4&gt;
+&lt;p&gt;En Lightning Network los pagos se enrutan a través de uno o más canales de pago siguiendo un camino del remitente al destinatario.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;En el siguiente artículo veremos más a detalle sobre &lt;code&gt;HTLC&lt;&#x2F;code&gt;(Hash Time-Locked Contracts).&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Flujo de vida de un canal de pago.</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/lightning/flujo-de-vida-de-canal/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/lightning/flujo-de-vida-de-canal/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/lightning/flujo-de-vida-de-canal/">&lt;h3 id=&quot;flujo-de-vida-de-canal-de-pago&quot;&gt;Flujo de vida de canal de pago.&lt;&#x2F;h3&gt;
+&lt;p&gt;Veamos el flujo de vida de un canal de pago para comprender mejor este concepto.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Se añade un nuevo peer antes de abrir un canal de pago para tener una comunicación.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lncli connect &amp;lt;PUBKEY&amp;gt;@&amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Ya que se tiene un peer conectado se inicia con el proceso de apertura de canal donde se especificará la cantidad que desea comprometer y una cantidad que le gustaría dar a la otra parte como estado de compromiso inicial.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lncli openchannel --node_key=&amp;lt;ID_PUBKEY&amp;gt; --local_amt=&amp;lt;CANTIDAD&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Se debe esperar la confirmación en la cadena de bloques.&lt;&#x2F;li&gt;
+&lt;li&gt;El canal se puede cerrar si alguna de las partes así lo desea.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lncli closechannel --funding_txid=&amp;lt;funding_txid&amp;gt; --output_index=&amp;lt;output_index&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;como-se-hace-una-apertura-de-canal&quot;&gt;¿Cómo se hace una apertura de canal?&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;el-proceso-seria-el-siguiente&quot;&gt;El proceso sería el siguiente.&lt;&#x2F;h4&gt;
+&lt;p&gt;Se realiza una transacción en la cadena de bloques para depositar los fondos en una salida de firma múltiple con la cantidad que desee que contenga el canal y este proceso implica que se tengan que pagar tarifas de transacción para abrirlo, a este concepto se le conoce como: &lt;strong&gt;transacción de financiamiento.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Una vez que la transacción se haya transmitido a la cadena de bloques, el canal de pago quedará abierto y listo para ser utlizado.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;por-que-utilizar-lightning-network&quot;&gt;¿Por qué utilizar Lightning Network?&lt;&#x2F;h3&gt;
+&lt;p&gt;Con Lightning Network puedes hacer pagos instantáneos sin tener que esperar confirmaciones, ya que los fondos se liquidan en segundos, puedes utilizarlo para hacer compras como utilizas normalmente el efectivo; cafés, restaurantes, libros, bares.... además Lightning Network puede ser utilizado en terminales de puntos de venta, (existen muchas implementaciones para esto), en transacciones entre dispositivos de usuarios, o en cualquier lugar donde se necesiten pagos rápidos.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;micropagos&quot;&gt;Micropagos.&lt;&#x2F;h4&gt;
+&lt;p&gt;Se pueden abrir nuevos mercados con la posibilidad de los micropagos. Lightning Network permite enviar fondos desde 0,00000001 de bitcoin sin riesgo de custodia. La cadena de bloques de Bitcoin impone actualmente un tamaño mínimo de salida cientos de veces mayor, y una tarifa fija por transacción que hace que los micropagos sean poco prácticos. Lightning Network permite pagos mínimos.&lt;&#x2F;p&gt;
+&lt;p&gt;Si eres una persona que apenas está empezando con Lightning Network y deseas conectar tu canal a nodos aquí hay un enlace donde puedes conectarlos, son canales recomendados para poder enrutar de forma segura ya que son nodos que llevan bastante tiempo en línea, además de tener un nivel elevado de prestigio dentro de la red.&lt;&#x2F;p&gt;
+&lt;p&gt;Finalmente si quieres saber más acerca de Lightning Network &lt;a href=&quot;https:&#x2F;&#x2F;lightning.network&#x2F;lightning-network-paper.pdf&quot;&gt;aquí&lt;&#x2F;a&gt; puedes encontrar el documento de oficial.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero sea de utilidad.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>HTLC (Hash Time-Locked Contracts).</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/lightning/htlc/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/lightning/htlc/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/lightning/htlc/">&lt;h3 id=&quot;htlc-hash-time-locked-contracts&quot;&gt;HTLC (Hash Time-Locked Contracts).&lt;&#x2F;h3&gt;
+&lt;p&gt;¿Qué sucede si se requiere enviar (enrutar) pagos a una persona con la que no se esté conectada directamente?&lt;&#x2F;p&gt;
+&lt;p&gt;En Lightning los pagos enrutados están habilitados por Contratos Hashed Timelock &lt;code&gt;(HTLC)&lt;&#x2F;code&gt;, estos contratos permiten que se puedan enrutar pagos a través de multiples saltos para enviarlos a cualquier persona dentro de la red que no esté conectada directamente a tu canal permitiendo que exista un único sistema financiero global interconectado, con estos contratos de pago condicionado un usuario de la red, por ejemplo Alicia, puede enviar a Carol Bitcoin si ella revela la imagen (secreto) previa a un hash específico.&lt;&#x2F;p&gt;
+&lt;p&gt;Cabe mencionar que estos contratos constan de dos partes importantes: la verificación del hash y la verificación del tiempo de vencimiento.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;veamos-como-es-esto&quot;&gt;Veamos cómo es esto.&lt;&#x2F;h4&gt;
+&lt;p&gt;Imaginemos que Alicia quiere enviar un pago a Dave de 2000 satoshis, sin embargo Alicia no tiene un canal directo conectado hacia él, pero si tiene una ruta por donde llegar, un canal que conecta con Carol, Bob y Dave.&lt;&#x2F;p&gt;
+&lt;p&gt;Así que el pago se puede hacer sin ningún problema a través de una ruta. En este tipo de casos es cuando se ocupan los contratos HTLC donde se utilizan dos tipos de bloqueos.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;hash –lock: bloqueado hasta que presente el valor de un secreto.
+&lt;&#x2F;span&gt;&lt;span&gt;time-lock: bloqueado hasta que el tiempo establecido se cumpla.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Veremos cómo funcionan más adelante, en la siguiente imagen podemos ver la situación de este pago para comprender los contratos HTLC.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;situacion-alicia-tiene-un-canal-con-carol-carol-con-bob-y-bob-con-dave&quot;&gt;Situación: Alicia tiene un canal con Carol, Carol con Bob y Bob con Dave.&lt;&#x2F;h4&gt;
+&lt;p&gt;De acuerdo a esta imagen podemos ver la ruta que llevaría hacer el pago a Dave, antes de comenzar con el flujo de pago definiremos algunas variables:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;R = secreto, también se conoce como preimagen y son solo los datos que se utilizan como entrada para una función hash.
+&lt;&#x2F;span&gt;&lt;span&gt;H = hash del secreto R.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;financiacion.png&quot; alt=&quot;financiacion&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alice enviará un pago de &lt;code&gt;2000&lt;&#x2F;code&gt; sats a Dave, lo primero que hace es notificarle que quiere enviárselos.&lt;&#x2F;li&gt;
+&lt;li&gt;Entonces Dave creará un número aleatorio llamado secreto R que no muestra a nadie, luego, calculará el hash de este secreto dando como resultado a H.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Nota: Este hash será compartido a lo largo de los canales, es decir; siempre será el mismo.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Dave le envía a Alicia el Hash del secreto, ósea H.&lt;&#x2F;li&gt;
+&lt;li&gt;Alice entonces crea un contrato &lt;code&gt;HTLC&lt;&#x2F;code&gt; con ese hash H por la cantidad de 2002 sats y además agrega un bloqueo &lt;code&gt;(time-lock)&lt;&#x2F;code&gt; de tiempo establecido en 5 bloques.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;Nota: los 3 sats adicionales se pagaran a los otros peers que ayuden a enrutar el pago y esa cantidad de 2003 sats quedará bloqueada en el contrato HTLC hasta que se encuentre R.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Alicia le dice a Carol: &quot;Te pagaré si puedes encontrar el secreto R en los próximos 5 bloques&quot;, y firma una transacción que sólo Carol puede canjear con conocimiento del Hash del secreto &lt;code&gt;H(hash -lock)&lt;&#x2F;code&gt;, y después sólo es canjeable por Alice.&lt;&#x2F;li&gt;
+&lt;li&gt;Entonces Carol sabe que puede enviar los fondos a Bob si Bob encuentra el secreto &lt;code&gt;R&lt;&#x2F;code&gt;, utiliza el hash de Alicia y crea un contrato &lt;code&gt;HTLC&lt;&#x2F;code&gt; por la cantidad de 2001 sats y le dice Bob: &quot;Te pagaré si puedes producir la preimagen de H en los siguientes 4 bloques&quot;, ósea el secreto &lt;code&gt;R&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Una vez que Bob encuentre &lt;code&gt;R&lt;&#x2F;code&gt;, Carol podrá desbloquear los fondos y cobrar la parte que le corresponde. Bob con conocimiento del secreto &lt;code&gt;R&lt;&#x2F;code&gt;, hace lo mismo, usa ese hash para crear un contrato &lt;code&gt;HTLC&lt;&#x2F;code&gt; por la cantidad de 2001 sats para enviárselo a Dave, y como Dave tiene el conocimiento de R puede desbloquear los 2000 sats y Bob cobrar la parte que le corresponde.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;flujo-pago.png&quot; alt=&quot;flujo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;asi-que-con-el-flujo-de-informacion-anterior-tenemos&quot;&gt;Así que con el flujo de información anterior tenemos.&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Solo la persona que conozca el secreto R o preimagen que generó el hash H podrá usar el pago.&lt;&#x2F;li&gt;
+&lt;li&gt;Si el secreto no se revela a tiempo y no se utilizó el pago, se pueden reocupar los fondos.&lt;&#x2F;li&gt;
+&lt;li&gt;Los saldos de los canales han cambiado.&lt;&#x2F;li&gt;
+&lt;li&gt;Cada uno de los participantes gano 1 sat por enrutar el pago.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Dejaré algunos enlaces donde pueden profundizar un poco más acerca de este tema:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.lightning.community&#x2F;overview&#x2F;&quot;&gt;LND Overview and Developer Guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@peter_r&#x2F;visualizing-htlcs-and-the-lightning-networks-dirty-little-secret-cb9b5773a0&quot;&gt;Visualizing HTLCs and the Lightning Network’s Dirty Little Secret&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lnbook&#x2F;lnbook&quot;&gt;Mastering the Lightning Network&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Hemos visto de forma resumida cómo funcionan los contratos HTLC veamos cual es el flujo de un canal de pago en el siguiente artículo.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>¿Qué es la red Lightning Network?</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/lightning/que-es-lightning/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/lightning/que-es-lightning/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/lightning/que-es-lightning/">&lt;h3 id=&quot;lightning-network&quot;&gt;Lightning Network&lt;&#x2F;h3&gt;
+&lt;p&gt;Para comprender mejor que es Lightning Network debo explicar de forma resumida cómo funciona Bitcoin.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin se ejecuta en la parte superior de un libro de contabilidad llamado cadena de bloques que es básicamente una gran lista de transacciones, un registro permanente y compartido en toda la red de Bitcoin y describe los movimientos del mismo en cada bloque.&lt;&#x2F;p&gt;
+&lt;p&gt;El proceso para agregar transacciones (hacer una transferencia de valor en la red de Bitcoin, es decir; enviar Bitcoin de una dirección a otra) a estos bloques se llama minería, donde los mineros (computadoras que ejecutan un software especial de minería) compiten con otros mineros para resolver un acertijo matemático y agregar dichas transacciones. A estos mineros se les paga una tarifa por este procesamiento.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;diseno-de-lightning-network&quot;&gt;Diseño de Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Debido a los incentivos que se deben pagar a los mineros para procesar transacciones de costo menor y al tiempo de demora se diseñó Lightning Network.&lt;&#x2F;p&gt;
+&lt;p&gt;Conforme se crean más transacciones, se congestiona la red y los usuarios deben pagar tarifas más altas para que su transacción se confirme en el siguiente bloque.&lt;&#x2F;p&gt;
+&lt;p&gt;Estás transacciones son relativamente lentas, se tardan aproximadamente una hora debido a que cada transacción es vista, validada y almacenada por cada computadora participante, esto genera una gran cantidad de datos difíciles de escalar. Una vez que los bloques están &quot;llenos&quot;, el exceso de transacciones se deja en espera para ser procesadas en el siguiente bloque, para que las transacciones entren en el primer bloque muchos usuarios aumentarán las tarifas que están dispuestos a pagar.&lt;&#x2F;p&gt;
+&lt;p&gt;Con el panorama anterior sería más difícil que las personas pudieran ocupar la red todos los días para el intercambio de bienes y servicios debido a la demora de transacciones y al costo de las transacciones.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;resolviendo-el-problema-de-escalabilidad&quot;&gt;Resolviendo el problema de escalabilidad&lt;&#x2F;h3&gt;
+&lt;p&gt;Para resolver esta congestión de datos se creó Lightning Network que propone una nueva red, una &lt;strong&gt;segunda capa&lt;&#x2F;strong&gt;, donde se pueden realizar pagos entre usuarios de igual a igual, sin la necesidad de publicar una transacción en la cadena de bloques de Bitcoin para cada pago. Los usuarios pueden pagarse entre sí en Lightning Network tantas veces como quieran sin incurrir en tarifas en cadena.&lt;&#x2F;p&gt;
+&lt;p&gt;La red Lightning Network es descentralizada también, los pagos se envían a través de una red de canales de micropagos (microtransacciones) digitales que utilizan contratos inteligentes, conocidos como canales de pago cuya transferencia de valor ocurre fuera de la cadena de bloques. Lightning Network es una red segura de participantes que pueden realizar transacciones de forma rápida, de gran volumen, segura, privada, sin confianza y sin permiso.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;creacion-de-lightning-network&quot;&gt;Creación de Lightning Network&lt;&#x2F;h3&gt;
+&lt;p&gt;En febrero de 2015, Joseph Poon y Thaddeus Dryja propusieron una posible solución al problema de escalabilidad de Bitcoin, con la publicación de &quot;The Bitcoin Lightning Network: pagos instantáneos escalables fuera de la cadena&quot;. En mayo del 2015 el desarrollador del kernel de Linux, Rusty Russell, se unió a Blockstream para comenzar la primera implementación de Lightning Network. Esta implementación esta escrito en el lenguaje de programación c (&lt;code&gt;c-lightning&lt;&#x2F;code&gt;) más tarde se le uniría Christian Decker, un desarrollador de Bitcoin.&lt;&#x2F;p&gt;
+&lt;p&gt;Previó a esto Rusty Russell escribió una serie de tres artículos para educar a la gente sobre Lightning Network: aquí puedes ver estos &lt;a href=&quot;https:&#x2F;&#x2F;rusty.ozlabs.org&#x2F;?p=467&quot;&gt;artículos&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Este evento fue fundamental para Lightning Network pues después de ser solo un concepto se convirtió en una realidad, desde entonces la red brinda a Bitcoin un mundo de posibilidades, incluida la mejora de la privacidad, la velocidad y la escala.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;privacidad-en-lightning-network&quot;&gt;Privacidad en Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Cabe mencionar que las transacciones son públicas dentro de la cadena de bloques, en cambio en la red de Lightning Network las transacciones no son vistas por nadie.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;componentes-de-lightning-network&quot;&gt;Componentes de Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Antes de ver los conceptos básicos de Lightning Network es importante saber cómo funciona y que tipo de implementaciones son las más importantes y más utilizadas.&lt;&#x2F;p&gt;
+&lt;p&gt;Como mencioné anteriormente Lightning Network es la cadena subyacente de Bitcoin y crea transacciones de apertura y cierre de canales dentro de la cadena de bloques, es una red P2P donde los nodos se agregan como pares para poder comunicarse por medio de una conexión cifrada dentro de la red de canales de pago.&lt;&#x2F;p&gt;
+&lt;p&gt;Para que pueda haber una interacción con la cadena de bloques, &lt;code&gt;bitcoind&lt;&#x2F;code&gt; o &lt;code&gt;btcd&lt;&#x2F;code&gt;, dependiendo el caso, es utilizado.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;nota-estos-conceptos-son-de-bitcoin-y-es-importante-comprenderlos-para-entender-lightning&quot;&gt;Nota: Estos conceptos son de Bitcoin y es importante comprenderlos para entender Lightning.&lt;&#x2F;h4&gt;
+&lt;p&gt;El componente principal que utiliza el software de Lightning es &lt;code&gt;lncli&lt;&#x2F;code&gt; y &lt;code&gt;lnd&lt;&#x2F;code&gt; (Lightning Network Daemon) el primero permite crear una serie de operaciones sobre los canales de pago como abrir y cerrar canales, enviar pagos, generar facturas, entre otros, el segundo abre una interfaz para conduciral primero.&lt;&#x2F;p&gt;
+&lt;p&gt;Además Lightning Network utiliza el protocolo &lt;code&gt;gRPC&lt;&#x2F;code&gt; para interactuar con &lt;code&gt;lnd&lt;&#x2F;code&gt;, &lt;code&gt;gRPC&lt;&#x2F;code&gt; es una versión mejorada de RPC, ambos protocolos son protocolos de llamada a procedimientos remotos (Remote Procedure Call) y se utiliza para comunicarse con clientes como &lt;code&gt;lncli&lt;&#x2F;code&gt;, es de código abierto y puede ejecutarse en cualquier entorno.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando se está ejecutando un nodo de Lightning Network tú puedes ver la lista completa de comandos útiles en línea de comando con la siguiente instrucción:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;lncli –help
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;O si quieres saber de algún comando en particular esta otra instrucción te puede ayudar:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;lncli &amp;lt;command&amp;gt; --help
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finalmente se pueden utilizar servicios &lt;code&gt;REST&lt;&#x2F;code&gt; en Lightning para la comunicación entre la red de Lightning y aplicaciones.&lt;&#x2F;p&gt;
+&lt;p&gt;Utilizar lncli dependerá de la implementación que se esté ejecutando, existen tres que son las más importantes en este orden:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;LND: es una implementación completa escrita en Go&lt;&#x2F;li&gt;
+&lt;li&gt;C-Lightning: una implementación compatible con las especificaciones en c.&lt;&#x2F;li&gt;
+&lt;li&gt;Eclair: es una implementación de Scala.&lt;&#x2F;li&gt;
+&lt;li&gt;Lightning Peach Daemon: es una implementación parcial en Rust, lpd.&lt;&#x2F;li&gt;
+&lt;li&gt;ptarmigan: Implementación de BOLT de Lightning Network.&lt;&#x2F;li&gt;
+&lt;li&gt;Rust Lightning: es una biblioteca Bitcoin Lightning escrita en Rust.&lt;&#x2F;li&gt;
+&lt;li&gt;lit - LN node software.&lt;&#x2F;li&gt;
+&lt;li&gt;lightning-onion - Micropagos enrutados de cebolla para la LN.&lt;&#x2F;li&gt;
+&lt;li&gt;ptarmigan - Implementación de LN en C++ compatible con BOLT.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Una vez que hemos visto cómo interactúan los componentes de Lightning Network, el software y las interfaces y las implementaciones podemos adentrarnos un poco más con los conceptos básicos.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;En el siguiente artículo veremos más a detalle sobre los nodos y canales de pago.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>¿Qué es un Watchtowers?</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/lightning/watchtowers/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/lightning/watchtowers/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/lightning/watchtowers/">&lt;h3 id=&quot;lightning-network&quot;&gt;Lightning Network&lt;&#x2F;h3&gt;
+&lt;p&gt;Para comprender mejor que es Lightning Network debo explicar de forma resumida cómo funciona Bitcoin.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin se ejecuta en la parte superior de un libro de contabilidad llamado cadena de bloques que es básicamente una gran lista de transacciones, un registro permanente y compartido en toda la red de Bitcoin y describe los movimientos del mismo en cada bloque.&lt;&#x2F;p&gt;
+&lt;p&gt;El proceso para agregar transacciones (hacer una transferencia de valor en la red de Bitcoin, es decir; enviar Bitcoin de una dirección a otra) a estos bloques se llama minería, donde los mineros (computadoras que ejecutan un software especial de minería) compiten con otros mineros para resolver un acertijo matemático y agregar dichas transacciones. A estos mineros se les paga una tarifa por este procesamiento.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;diseno-de-lightning-network&quot;&gt;Diseño de Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Debido a los incentivos que se deben pagar a los mineros para procesar transacciones de costo menor y al tiempo de demora se diseñó Lightning Network.&lt;&#x2F;p&gt;
+&lt;p&gt;Conforme se crean más transacciones, se congestiona la red y los usuarios deben pagar tarifas más altas para que su transacción se confirme en el siguiente bloque.&lt;&#x2F;p&gt;
+&lt;p&gt;Estás transacciones son relativamente lentas, se tardan aproximadamente una hora debido a que cada transacción es vista, validada y almacenada por cada computadora participante, esto genera una gran cantidad de datos difíciles de escalar. Una vez que los bloques están &quot;llenos&quot;, el exceso de transacciones se deja en espera para ser procesadas en el siguiente bloque, para que las transacciones entren en el primer bloque muchos usuarios aumentarán las tarifas que están dispuestos a pagar.&lt;&#x2F;p&gt;
+&lt;p&gt;Con el panorama anterior sería más difícil que las personas pudieran ocupar la red todos los días para el intercambio de bienes y servicios debido a la demora de transacciones y al costo de las transacciones.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;resolviendo-el-problema-de-escalabilidad&quot;&gt;Resolviendo el problema de escalabilidad&lt;&#x2F;h3&gt;
+&lt;p&gt;Para resolver esta congestión de datos se creó Lightning Network que propone una nueva red, una &lt;strong&gt;segunda capa&lt;&#x2F;strong&gt;, donde se pueden realizar pagos entre usuarios de igual a igual, sin la necesidad de publicar una transacción en la cadena de bloques de Bitcoin para cada pago. Los usuarios pueden pagarse entre sí en Lightning Network tantas veces como quieran sin incurrir en tarifas en cadena.&lt;&#x2F;p&gt;
+&lt;p&gt;La red Lightning Network es descentralizada también, los pagos se envían a través de una red de canales de micropagos (microtransacciones) digitales que utilizan contratos inteligentes, conocidos como canales de pago cuya transferencia de valor ocurre fuera de la cadena de bloques. Lightning Network es una red segura de participantes que pueden realizar transacciones de forma rápida, de gran volumen, segura, privada, sin confianza y sin permiso.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;creacion-de-lightning-network&quot;&gt;Creación de Lightning Network&lt;&#x2F;h3&gt;
+&lt;p&gt;En febrero de 2015, Joseph Poon y Thaddeus Dryja propusieron una posible solución al problema de escalabilidad de Bitcoin, con la publicación de &quot;The Bitcoin Lightning Network: pagos instantáneos escalables fuera de la cadena&quot;. En mayo del 2015 el desarrollador del kernel de Linux, Rusty Russell, se unió a Blockstream para comenzar la primera implementación de Lightning Network. Esta implementación esta escrito en el lenguaje de programación c (&lt;code&gt;c-lightning&lt;&#x2F;code&gt;) más tarde se le uniría Christian Decker, un desarrollador de Bitcoin.&lt;&#x2F;p&gt;
+&lt;p&gt;Previó a esto Rusty Russell escribió una serie de tres artículos para educar a la gente sobre Lightning Network: aquí puedes ver estos &lt;a href=&quot;https:&#x2F;&#x2F;rusty.ozlabs.org&#x2F;?p=467&quot;&gt;artículos&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Este evento fue fundamental para Lightning Network pues después de ser solo un concepto se convirtió en una realidad, desde entonces la red brinda a Bitcoin un mundo de posibilidades, incluida la mejora de la privacidad, la velocidad y la escala.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;privacidad-en-lightning-network&quot;&gt;Privacidad en Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Cabe mencionar que las transacciones son públicas dentro de la cadena de bloques, en cambio en la red de Lightning Network las transacciones no son vistas por nadie.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;componentes-de-lightning-network&quot;&gt;Componentes de Lightning Network.&lt;&#x2F;h3&gt;
+&lt;p&gt;Antes de ver los conceptos básicos de Lightning Network es importante saber cómo funciona y que tipo de implementaciones son las más importantes y más utilizadas.&lt;&#x2F;p&gt;
+&lt;p&gt;Como mencioné anteriormente Lightning Network es la cadena subyacente de Bitcoin y crea transacciones de apertura y cierre de canales dentro de la cadena de bloques, es una red P2P donde los nodos se agregan como pares para poder comunicarse por medio de una conexión cifrada dentro de la red de canales de pago.&lt;&#x2F;p&gt;
+&lt;p&gt;Para que pueda haber una interacción con la cadena de bloques, &lt;code&gt;bitcoind&lt;&#x2F;code&gt; o &lt;code&gt;btcd&lt;&#x2F;code&gt;, dependiendo el caso, es utilizado.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;nota-estos-conceptos-son-de-bitcoin-y-es-importante-comprenderlos-para-entender-lightning&quot;&gt;Nota: Estos conceptos son de Bitcoin y es importante comprenderlos para entender Lightning.&lt;&#x2F;h4&gt;
+&lt;p&gt;El componente principal que utiliza el software de Lightning es &lt;code&gt;lncli&lt;&#x2F;code&gt; y &lt;code&gt;lnd&lt;&#x2F;code&gt; (Lightning Network Daemon) el primero permite crear una serie de operaciones sobre los canales de pago como abrir y cerrar canales, enviar pagos, generar facturas, entre otros, el segundo abre una interfaz para conduciral primero.&lt;&#x2F;p&gt;
+&lt;p&gt;Además Lightning Network utiliza el protocolo &lt;code&gt;gRPC&lt;&#x2F;code&gt; para interactuar con &lt;code&gt;lnd&lt;&#x2F;code&gt;, &lt;code&gt;gRPC&lt;&#x2F;code&gt; es una versión mejorada de RPC, ambos protocolos son protocolos de llamada a procedimientos remotos (Remote Procedure Call) y se utiliza para comunicarse con clientes como &lt;code&gt;lncli&lt;&#x2F;code&gt;, es de código abierto y puede ejecutarse en cualquier entorno.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando se está ejecutando un nodo de Lightning Network tú puedes ver la lista completa de comandos útiles en línea de comando con la siguiente instrucción:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;lncli –help
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;O si quieres saber de algún comando en particular esta otra instrucción te puede ayudar:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;lncli &amp;lt;command&amp;gt; --help
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finalmente se pueden utilizar servicios &lt;code&gt;REST&lt;&#x2F;code&gt; en Lightning para la comunicación entre la red de Lightning y aplicaciones.&lt;&#x2F;p&gt;
+&lt;p&gt;Utilizar lncli dependerá de la implementación que se esté ejecutando, existen tres que son las más importantes en este orden:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;LND: es una implementación completa escrita en Go&lt;&#x2F;li&gt;
+&lt;li&gt;C-Lightning: una implementación compatible con las especificaciones en c.&lt;&#x2F;li&gt;
+&lt;li&gt;Eclair: es una implementación de Scala.&lt;&#x2F;li&gt;
+&lt;li&gt;Lightning Peach Daemon: es una implementación parcial en Rust, lpd.&lt;&#x2F;li&gt;
+&lt;li&gt;ptarmigan: Implementación de BOLT de Lightning Network.&lt;&#x2F;li&gt;
+&lt;li&gt;Rust Lightning: es una biblioteca Bitcoin Lightning escrita en Rust.&lt;&#x2F;li&gt;
+&lt;li&gt;lit - LN node software.&lt;&#x2F;li&gt;
+&lt;li&gt;lightning-onion - Micropagos enrutados de cebolla para la LN.&lt;&#x2F;li&gt;
+&lt;li&gt;ptarmigan - Implementación de LN en C++ compatible con BOLT.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Una vez que hemos visto cómo interactúan los componentes de Lightning Network, el software y las interfaces y las implementaciones podemos adentrarnos un poco más con los conceptos básicos.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;En el siguiente artículo veremos más a detalle sobre los nodos y canales de pago.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

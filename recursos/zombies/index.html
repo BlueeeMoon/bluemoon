@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>Canales zombies.<a href="https:&#x2F;&#x2F;github.com&#x2F;lightninglabs" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <p>Guía de recuperaciòn de canales zombies. Esta guía te ayudará a este proceso paso a paso.</p>
+<h3 id="requisitos-previos">Requisitos Previos</h3>
+<p>Antes de comenzar con la configuración, asegúrate de tener los siguientes requisitos previos:</p>
+<ul>
+<li>Haber leído este <a href="https://github.com/lightninglabs/chantools/blob/master/doc/zombierecovery.md">repositorio</a></li>
+<li>Palabras semilla de ambos pares.</li>
+<li>Estar en contacto con el par o pares de tus canales (en este punto ya habrán negociado un estado de cierre de los canales.)</li>
+<li>Tener el archivo de coincidencia <strong>json</strong>, en el documento viene como obtenerlo.</li>
+</ul>
+<p>Formato:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>
+</span><span>{
+</span><span>    &quot;</span><span style="color:#a3be8c;">node1</span><span>&quot;: {
+</span><span>        &quot;</span><span style="color:#a3be8c;">identity_pubkey</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">03xxxxxx</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">contact</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">contact information for node 1, not needed by chantools itself</span><span>&quot;
+</span><span>    },
+</span><span>    &quot;</span><span style="color:#a3be8c;">node2</span><span>&quot;: {
+</span><span>        &quot;</span><span style="color:#a3be8c;">identity_pubkey</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">03yyyyyy</span><span>&quot;,
+</span><span>        &quot;</span><span style="color:#a3be8c;">contact</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">contact information for node 2, not needed by chantools itself</span><span>&quot;
+</span><span>    },
+</span><span>    &quot;</span><span style="color:#a3be8c;">channels</span><span>&quot;: [
+</span><span>        {
+</span><span>            &quot;</span><span style="color:#a3be8c;">short_channel_id</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">61xxxxxxxxxxxxx (optional, numerical channel ID, can be found on 1ml.com)</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">chan_point</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">&lt;txid&gt;:&lt;output_index&gt; (also called channel point on 1ml.com)</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">address</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">bc1q...... (the channel&#39;s output address on chain, find out by looking up the channel point on a block explorer)</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">capacity</span><span>&quot;: </span><span style="color:#d08770;">123456
+</span><span>        }
+</span><span>    ]
+</span><span>}
+</span><span>
+</span></code></pre>
+<h2 id="paso-1-instalar-chantools">Paso 1: Instalar Chantools</h2>
+<ol>
+<li>Visita el <a href="https://github.com/lightninglabs/chantools">repositorio oficial de chantools</a></li>
+<li>Selecciona la versión adecuada para tu sistema operativo.</li>
+<li>Sigue las intrucciones e instala.</li>
+<li>Verifica la instalación con: <code>chantools --help</code></li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>This tool provides helper functions that can be used rescue
+</span><span>funds locked in lnd channels in case lnd itself cannot run properly anymore.
+</span><span>Complete documentation is available at
+</span><span>https://github.com/lightninglabs/chantools/.
+</span><span>
+</span><span>Usage:
+</span><span>  chantools [command]
+</span><span>
+</span></code></pre>
+<h1 id="nota">Nota:</h1>
+<p><strong>Ambos nodos deben hacerlo.</strong></p>
+<h2 id="paso-2-archivo-json">Paso 2: Archivo json</h2>
+<ol>
+<li>Crear/subir el archivo <strong>json</strong> en algún directorio de tu preferencia.</li>
+<li><code>cd /tmp</code></li>
+<li>Colocar el contenido del <strong>json</strong> recibido <code>vi match.json</code></li>
+<li>Generar una dirección de Bitcoin, en mi caso use <a href="https://github.com/curly60e/pyblock">PyBlock</a> para hacerla (puedes generarla como desees)</li>
+<li>Una vez que tengas la dirección ejecutar la siguiente instrucción (reemplazar bc1xxx por tu dirección):</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chantools zombierecovery preparekeys --payout_addr bc1xxx --match_file /tmp/match.json
+</span></code></pre>
+<h1 id="nota-1">Nota:</h1>
+<p><strong>Ambos nodos deberán hacerlo.</strong></p>
+<h2 id="paso-3-validar-archivos-y-preparar-tarifa">Paso 3: Validar archivos y preparar tarifa.</h2>
+<ol>
+<li>Cuando se ejecuta la instrucción <code>chantools zombierecovery..</code> se genera un directorio llamado <code>results</code> en la ubicación donde te encuentras.</li>
+<li>Accede al directorio <code>cd results</code></li>
+<li>Ver el contenido <code>ls -lart</code></li>
+<li>El directorio creo un archivo con el siguiente formato <code>preparedkeys-year-month-day-nodepuykey.json</code></li>
+</ol>
+<h1 id="nota-2">Nota:</h1>
+<p><strong>Ambos nodos deberán hacerlo.</strong></p>
+<h2 id="paso-4-juntar-archivos-json">Paso 4: Juntar archivos json.</h2>
+<ol>
+<li>Asegúrate de que tu par haya ejecutado el paso anterior.</li>
+<li>Alguno de los dos tendrá que compartir su archivo <strong>json</strong>.</li>
+<li>Una vez que tenga alguno de los dos los archivos, deberá colocarlo en el directorio <code>results</code>.</li>
+</ol>
+<h2 id="paso-5-crear-oferta">Paso 5: Crear oferta</h2>
+<ol>
+<li>Seguramente ya verificaron la <a href="https://github.com/lightninglabs/chantools/blob/master/doc/zombierecovery.md#read-me-first">guía</a> donde deciden la forma de dividir el saldo del canal entre tú y tu par.</li>
+<li>Una vez que tomada la decisión, alguno de los dos deberá ejecutar la siguiente instrucción, el que tenga ambos archivos:</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chantools zombierecovery makeoffer \
+</span><span>	--node1_keys preparedkeys-year-month-day-nodepuykey1.json \
+</span><span>	--node2_keys preparedkeys-year-month-day-nodepuykey2.json \
+</span><span>	--feerate 15
+</span></code></pre>
+<ol start="3">
+<li>Te pedirá tus palabras semillas:</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Input your 24-word mnemonic separated by spaces:
+</span><span>
+</span></code></pre>
+<ol start="4">
+<li>Si usas una frase para tus palabras semillas deberás introducirla, sino simplemente enter.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Input your cipher seed passphrase (press enter if your seed doesn&#39;t have a passphrase):
+</span><span>
+</span></code></pre>
+<ol start="5">
+<li>Te mostrará un mensaje como el siguiente: <code>Found keys for channel..</code> esto dependerá de los canales que vayas a recuperar.</li>
+<li>Si son tres canales por ejemplo, te mostrará tres bloques de dialogo donde tendrás que poner la cantidad de sats, no te preocupes, es muy intuitivo ya que muestra los siguientes datos:</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Channel f006..................................................:1 (1 of 3):
+</span><span>        Capacity: &quot;cantidad&quot; sat
+</span><span>        Funding TXID: https://blockstream.info/tx/ f006............................................
+</span><span>        Channel info: https://1ml.com/channel/ &quot;short_channel_id&quot;
+</span><span>        Channel funding address: &quot;La dirección con la que se abrio el canal&quot;
+</span><span>		
+</span><span>How many sats should go to you (&quot;dirección&quot;) before fees?: cantidad 
+</span><span>
+</span><span>Will send:
+</span><span>        cantidad sats to our address (&quot;dirección&quot;) and
+</span><span>        0 sats to the other peer&#39;s address (&quot;dirección&quot;).
+</span><span>		
+</span></code></pre>
+<ol start="7">
+<li>Solo tendrás que colocar la cantidad. Esto se mostrará 3 veces ya que en este caso son tres canales.</li>
+<li>El resultado será un PSBT <strong>(<em>transacción de bitcoin parcialmente firmada</em>)</strong> firmado.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Done creating offer, please send this PSBT string to
+</span><span>the other party to review and sign (if they accept):
+</span><span>cHNidP8BAPYCAAAABWkfV1KJwCjcd+llYjb4UyM0nCLIn7X1FfRQOOc1........
+</span><span>
+</span></code></pre>
+<h2 id="paso-5-firmar-psbt-por-parte-de-la-contraparte">Paso 5: Firmar PSBT por parte de la contraparte.</h2>
+<ol>
+<li>El par tendrá que firmar el PSBT.</li>
+<li>Envía la cadena hexadecimal obtenida para que la firme el par.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chantools zombierecovery signoffer \
+</span><span>	--psbt &lt;offered_psbt_base64&gt;
+</span></code></pre>
+<ol start="3">
+<li>Una vez ejecutada la instrucción anterior, le pedirá las palabras semillas.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Input your 24-word mnemonic separated by spaces:
+</span><span>
+</span></code></pre>
+<ol start="4">
+<li>Si usa una frase para sus palabras semillas deberá introducirla, sino simplemente enter.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Input your cipher seed passphrase (press enter if your seed doesn&#39;t have a passphrase):
+</span><span>
+</span></code></pre>
+<ol start="5">
+<li>Posteriormente mostrará el siguiente mensaje:</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>The PSBT contains the following proposal:
+</span><span>
+</span><span>        Close 3 channels:
+</span><span>        Channel 0 (&quot;chan_point&quot;:1), capacity &quot;cantidad&quot; sats
+</span><span>        Channel 1 (&quot;chan_point&quot;:1), capacity &quot;cantidad&quot; sats
+</span><span>        Channel 2 (&quot;chan_point&quot;), capacity &quot;cantidad&quot; sats
+</span><span>       
+</span><span>        Send &quot;cantidad&quot; sats to address &quot;dirección generada en pasos anteriores&quot;
+</span><span>
+</span><span>        Total fees: &quot;cantidad&quot; sats
+</span><span>
+</span><span>Do you want to continue?
+</span><span>Press &lt;enter&gt; to continue and sign the transaction or &lt;ctrl+c&gt; to abort:
+</span><span>Success, we counter signed the PSBT and extracted the final
+</span><span>transaction. Please publish this using any bitcoin node:
+</span><span>
+</span><span>
+</span></code></pre>
+<h2 id="paso-5-transmitir-transaccion">Paso 5: Transmitir transacción.</h2>
+<ol>
+<li>
+<p>Después de ejecutar <code>chantools zombierecovery signoffer...</code> el resultado será una transacción que no ha sido enviada a la red.</p>
+</li>
+<li>
+<p>Se verá como esto: <code>02000000000105691f575289c028dc77e9656236f85323349c22c89fb5f515f45038e735e806f0010...</code></p>
+</li>
+<li>
+<p>Cualquiera de los dos pares podrá enviar la transacción a la red con el comando siguiente:</p>
+</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span> bitcoin-cli sendrawtransaction 02000000000105691f575289c028dc77e9656236f85323349c22c89fb5f515f45038e735e806f0010... 
+</span><span>
+</span></code></pre>
+<ol start="3">
+<li>El resultado será el ID de la transacción.</li>
+</ol>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>4d8c3f8239b63db649fd789f95ac5f.........
+</span><span>
+</span></code></pre>
+<ol start="4">
+<li>Puedes verificar la transacción en cualquier explorador de bloques o en tu propio nodo.</li>
+<li>Ahora solo debes esperar a que sea confirmada.</li>
+<li>Una vez que pase esto, el saldo deberá estar de vuelta.</li>
+</ol>
+<h1 id="nota-3">Nota:</h1>
+<p><strong>Los datos como: cantidad, chan_point, dirección,.., sustituyen los valores reales.</strong></p>
+<p>¡Gracias! Si tienes alguna pregunta o sugerencia, no dudes en comunicármelo.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>
