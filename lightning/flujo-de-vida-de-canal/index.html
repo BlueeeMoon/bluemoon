@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>Flujo de vida de un canal de pago.<a href="https:&#x2F;&#x2F;lightning.network&#x2F;" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h3 id="flujo-de-vida-de-canal-de-pago">Flujo de vida de canal de pago.</h3>
+<p>Veamos el flujo de vida de un canal de pago para comprender mejor este concepto.</p>
+<ol>
+<li>Se añade un nuevo peer antes de abrir un canal de pago para tener una comunicación.
+<ul>
+<li><code>lncli connect &lt;PUBKEY&gt;@&lt;HOST&gt;:&lt;PORT&gt;</code></li>
+</ul>
+</li>
+<li>Ya que se tiene un peer conectado se inicia con el proceso de apertura de canal donde se especificará la cantidad que desea comprometer y una cantidad que le gustaría dar a la otra parte como estado de compromiso inicial.
+<ul>
+<li><code>lncli openchannel --node_key=&lt;ID_PUBKEY&gt; --local_amt=&lt;CANTIDAD&gt;</code></li>
+</ul>
+</li>
+<li>Se debe esperar la confirmación en la cadena de bloques.</li>
+<li>El canal se puede cerrar si alguna de las partes así lo desea.
+<ul>
+<li><code>lncli closechannel --funding_txid=&lt;funding_txid&gt; --output_index=&lt;output_index&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="como-se-hace-una-apertura-de-canal">¿Cómo se hace una apertura de canal?</h3>
+<h4 id="el-proceso-seria-el-siguiente">El proceso sería el siguiente.</h4>
+<p>Se realiza una transacción en la cadena de bloques para depositar los fondos en una salida de firma múltiple con la cantidad que desee que contenga el canal y este proceso implica que se tengan que pagar tarifas de transacción para abrirlo, a este concepto se le conoce como: <strong>transacción de financiamiento.</strong></p>
+<p>Una vez que la transacción se haya transmitido a la cadena de bloques, el canal de pago quedará abierto y listo para ser utlizado.</p>
+<h3 id="por-que-utilizar-lightning-network">¿Por qué utilizar Lightning Network?</h3>
+<p>Con Lightning Network puedes hacer pagos instantáneos sin tener que esperar confirmaciones, ya que los fondos se liquidan en segundos, puedes utilizarlo para hacer compras como utilizas normalmente el efectivo; cafés, restaurantes, libros, bares.... además Lightning Network puede ser utilizado en terminales de puntos de venta, (existen muchas implementaciones para esto), en transacciones entre dispositivos de usuarios, o en cualquier lugar donde se necesiten pagos rápidos.</p>
+<h4 id="micropagos">Micropagos.</h4>
+<p>Se pueden abrir nuevos mercados con la posibilidad de los micropagos. Lightning Network permite enviar fondos desde 0,00000001 de bitcoin sin riesgo de custodia. La cadena de bloques de Bitcoin impone actualmente un tamaño mínimo de salida cientos de veces mayor, y una tarifa fija por transacción que hace que los micropagos sean poco prácticos. Lightning Network permite pagos mínimos.</p>
+<p>Si eres una persona que apenas está empezando con Lightning Network y deseas conectar tu canal a nodos aquí hay un enlace donde puedes conectarlos, son canales recomendados para poder enrutar de forma segura ya que son nodos que llevan bastante tiempo en línea, además de tener un nivel elevado de prestigio dentro de la red.</p>
+<p>Finalmente si quieres saber más acerca de Lightning Network <a href="https://lightning.network/lightning-network-paper.pdf">aquí</a> puedes encontrar el documento de oficial.</p>
+<h4 id="gracias">Gracias.</h4>
+<p>Espero sea de utilidad.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>

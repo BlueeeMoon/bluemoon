@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>¿Qué es un Watchtowers?<a href="https:&#x2F;&#x2F;lightning.network&#x2F;" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h3 id="lightning-network">Lightning Network</h3>
+<p>Para comprender mejor que es Lightning Network debo explicar de forma resumida cómo funciona Bitcoin.</p>
+<p>Bitcoin se ejecuta en la parte superior de un libro de contabilidad llamado cadena de bloques que es básicamente una gran lista de transacciones, un registro permanente y compartido en toda la red de Bitcoin y describe los movimientos del mismo en cada bloque.</p>
+<p>El proceso para agregar transacciones (hacer una transferencia de valor en la red de Bitcoin, es decir; enviar Bitcoin de una dirección a otra) a estos bloques se llama minería, donde los mineros (computadoras que ejecutan un software especial de minería) compiten con otros mineros para resolver un acertijo matemático y agregar dichas transacciones. A estos mineros se les paga una tarifa por este procesamiento.</p>
+<h3 id="diseno-de-lightning-network">Diseño de Lightning Network.</h3>
+<p>Debido a los incentivos que se deben pagar a los mineros para procesar transacciones de costo menor y al tiempo de demora se diseñó Lightning Network.</p>
+<p>Conforme se crean más transacciones, se congestiona la red y los usuarios deben pagar tarifas más altas para que su transacción se confirme en el siguiente bloque.</p>
+<p>Estás transacciones son relativamente lentas, se tardan aproximadamente una hora debido a que cada transacción es vista, validada y almacenada por cada computadora participante, esto genera una gran cantidad de datos difíciles de escalar. Una vez que los bloques están "llenos", el exceso de transacciones se deja en espera para ser procesadas en el siguiente bloque, para que las transacciones entren en el primer bloque muchos usuarios aumentarán las tarifas que están dispuestos a pagar.</p>
+<p>Con el panorama anterior sería más difícil que las personas pudieran ocupar la red todos los días para el intercambio de bienes y servicios debido a la demora de transacciones y al costo de las transacciones.</p>
+<h3 id="resolviendo-el-problema-de-escalabilidad">Resolviendo el problema de escalabilidad</h3>
+<p>Para resolver esta congestión de datos se creó Lightning Network que propone una nueva red, una <strong>segunda capa</strong>, donde se pueden realizar pagos entre usuarios de igual a igual, sin la necesidad de publicar una transacción en la cadena de bloques de Bitcoin para cada pago. Los usuarios pueden pagarse entre sí en Lightning Network tantas veces como quieran sin incurrir en tarifas en cadena.</p>
+<p>La red Lightning Network es descentralizada también, los pagos se envían a través de una red de canales de micropagos (microtransacciones) digitales que utilizan contratos inteligentes, conocidos como canales de pago cuya transferencia de valor ocurre fuera de la cadena de bloques. Lightning Network es una red segura de participantes que pueden realizar transacciones de forma rápida, de gran volumen, segura, privada, sin confianza y sin permiso.</p>
+<h3 id="creacion-de-lightning-network">Creación de Lightning Network</h3>
+<p>En febrero de 2015, Joseph Poon y Thaddeus Dryja propusieron una posible solución al problema de escalabilidad de Bitcoin, con la publicación de "The Bitcoin Lightning Network: pagos instantáneos escalables fuera de la cadena". En mayo del 2015 el desarrollador del kernel de Linux, Rusty Russell, se unió a Blockstream para comenzar la primera implementación de Lightning Network. Esta implementación esta escrito en el lenguaje de programación c (<code>c-lightning</code>) más tarde se le uniría Christian Decker, un desarrollador de Bitcoin.</p>
+<p>Previó a esto Rusty Russell escribió una serie de tres artículos para educar a la gente sobre Lightning Network: aquí puedes ver estos <a href="https://rusty.ozlabs.org/?p=467">artículos</a></p>
+<p>Este evento fue fundamental para Lightning Network pues después de ser solo un concepto se convirtió en una realidad, desde entonces la red brinda a Bitcoin un mundo de posibilidades, incluida la mejora de la privacidad, la velocidad y la escala.</p>
+<h3 id="privacidad-en-lightning-network">Privacidad en Lightning Network.</h3>
+<p>Cabe mencionar que las transacciones son públicas dentro de la cadena de bloques, en cambio en la red de Lightning Network las transacciones no son vistas por nadie.</p>
+<h3 id="componentes-de-lightning-network">Componentes de Lightning Network.</h3>
+<p>Antes de ver los conceptos básicos de Lightning Network es importante saber cómo funciona y que tipo de implementaciones son las más importantes y más utilizadas.</p>
+<p>Como mencioné anteriormente Lightning Network es la cadena subyacente de Bitcoin y crea transacciones de apertura y cierre de canales dentro de la cadena de bloques, es una red P2P donde los nodos se agregan como pares para poder comunicarse por medio de una conexión cifrada dentro de la red de canales de pago.</p>
+<p>Para que pueda haber una interacción con la cadena de bloques, <code>bitcoind</code> o <code>btcd</code>, dependiendo el caso, es utilizado.</p>
+<h4 id="nota-estos-conceptos-son-de-bitcoin-y-es-importante-comprenderlos-para-entender-lightning">Nota: Estos conceptos son de Bitcoin y es importante comprenderlos para entender Lightning.</h4>
+<p>El componente principal que utiliza el software de Lightning es <code>lncli</code> y <code>lnd</code> (Lightning Network Daemon) el primero permite crear una serie de operaciones sobre los canales de pago como abrir y cerrar canales, enviar pagos, generar facturas, entre otros, el segundo abre una interfaz para conduciral primero.</p>
+<p>Además Lightning Network utiliza el protocolo <code>gRPC</code> para interactuar con <code>lnd</code>, <code>gRPC</code> es una versión mejorada de RPC, ambos protocolos son protocolos de llamada a procedimientos remotos (Remote Procedure Call) y se utiliza para comunicarse con clientes como <code>lncli</code>, es de código abierto y puede ejecutarse en cualquier entorno.</p>
+<p>Cuando se está ejecutando un nodo de Lightning Network tú puedes ver la lista completa de comandos útiles en línea de comando con la siguiente instrucción:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>lncli –help
+</span></code></pre>
+<p>O si quieres saber de algún comando en particular esta otra instrucción te puede ayudar:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>lncli &lt;command&gt; --help
+</span></code></pre>
+<p>Finalmente se pueden utilizar servicios <code>REST</code> en Lightning para la comunicación entre la red de Lightning y aplicaciones.</p>
+<p>Utilizar lncli dependerá de la implementación que se esté ejecutando, existen tres que son las más importantes en este orden:</p>
+<ul>
+<li>LND: es una implementación completa escrita en Go</li>
+<li>C-Lightning: una implementación compatible con las especificaciones en c.</li>
+<li>Eclair: es una implementación de Scala.</li>
+<li>Lightning Peach Daemon: es una implementación parcial en Rust, lpd.</li>
+<li>ptarmigan: Implementación de BOLT de Lightning Network.</li>
+<li>Rust Lightning: es una biblioteca Bitcoin Lightning escrita en Rust.</li>
+<li>lit - LN node software.</li>
+<li>lightning-onion - Micropagos enrutados de cebolla para la LN.</li>
+<li>ptarmigan - Implementación de LN en C++ compatible con BOLT.</li>
+</ul>
+<p>Una vez que hemos visto cómo interactúan los componentes de Lightning Network, el software y las interfaces y las implementaciones podemos adentrarnos un poco más con los conceptos básicos.</p>
+<h4 id="gracias">Gracias.</h4>
+<p>En el siguiente artículo veremos más a detalle sobre los nodos y canales de pago.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>

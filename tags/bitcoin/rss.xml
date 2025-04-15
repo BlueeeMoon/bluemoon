@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title> - Bitcoin</title>
+      <link>https://blueeemoon.github.io/bluemoon/</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://blueeemoon.github.io/bluemoon/tags/bitcoin/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 14 Apr 2025 11:35:41 +0000</lastBuildDate>
+      <item>
+          <title>Conceptos clave.</title>
+          <pubDate>Mon, 14 Apr 2025 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/conceptos-clave/">&lt;hr &#x2F;&gt;
+&lt;p&gt;Veremos algunas definiciones que considero importantes comprender para poder comenzar con &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Las definiciones más específicas y técnicas las puedes encontrar en el siguiente &lt;a href=&quot;https:&#x2F;&#x2F;bitcoinops.org&#x2F;en&#x2F;topics&#x2F;&quot;&gt;enlace&lt;&#x2F;a&gt;.
+Para comenzar existen algunas definiciones que son indispensables conocer. Cuando comiences a utilizar &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; necesitarás una Wallet, la cual generará una dirección, alguien que te envie &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; o adquirirlos, con estos puntos importantes podemos aprender otros más.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;bitcoin-y-bitcoin&quot;&gt;Bitcoin y bitcoin.&lt;&#x2F;h3&gt;
+&lt;p&gt;Cuando estamos hablando del protocolo como tal usamos la letra mayúscula al inicio de la palabra &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; y si estamos hablando de la moneda, usamos la palabra con minúscula al inicio &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;La unidad monetaria se llama bitcoin con b minúscula, y el sistema se llama Bitcoin, con B mayúscula.&quot;
+&lt;strong&gt;Mastering Bitcoin&lt;&#x2F;strong&gt;. Autor: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bitcoinbook&#x2F;bitcoinbook&#x2F;blob&#x2F;develop&#x2F;ch01_intro.adoc#:~:text=Tip,capital%20B.&quot;&gt;Andreas M. Antonopoulos, David A. Harding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Ahora que ya podemos diferenciar una de otra veamos lo que tenemos pendiente con el primer párrafo. Si vas a adquirir &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; necesitarás una dirección.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;que-es-una-direccion&quot;&gt;¿Qué es una dirección?&lt;&#x2F;h3&gt;
+&lt;p&gt;Una dirección en el protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; es una cadena alfanumérica que ha pasado por un proceso computacional para ser creada. Es como un número de cuenta donde puedes recibir &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; y se ve así:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;bc1pp7w6kxpj5lzgm28pmuhezwl0vjdlcrthqukll5gn9xuqfq1n673smy8m67&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Esta dirección es un identificador que dentro del protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; es una &lt;strong&gt;llave pública&lt;&#x2F;strong&gt;. Veremos esto más adelante. Ahora te preguntarás: ¿cómo gastar esos &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;?, vamos al apartado siguiente.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;llave-privada-y-llave-privada&quot;&gt;Llave privada y llave privada.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ya que tenemos nuestra número de cuenta (dirección), necesitaremos algo así como una contraseña para desbloquear ese &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; que nos han enviado. Esa contraseña es una &lt;strong&gt;llave privada&lt;&#x2F;strong&gt;. ¡Qué maravilloso, hemos llegado a los conceptos de &lt;strong&gt;llaves privadas&lt;&#x2F;strong&gt; y &lt;strong&gt;llaves públicas&lt;&#x2F;strong&gt;!&lt;&#x2F;p&gt;
+&lt;p&gt;La &lt;strong&gt;llave privada&lt;&#x2F;strong&gt; es el primer paso en la creación de una dirección en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Esta llave es simplemente un número aleatorio de 256 bits, generado de manera segura usando una fuente de entropía criptográfica.&lt;&#x2F;p&gt;
+&lt;p&gt;A partir de la &lt;strong&gt;llave privada&lt;&#x2F;strong&gt; se genera la &lt;strong&gt;llave pública&lt;&#x2F;strong&gt;. Este proceso se hace utilizando una operación matemática que toma la &lt;strong&gt;llave privada&lt;&#x2F;strong&gt; y la transforma en una &lt;strong&gt;llave pública&lt;&#x2F;strong&gt; de 512 bits (64 bytes).&lt;&#x2F;p&gt;
+&lt;p&gt;Estos conceptos no los veremos de manera técnica en este documento puesto que es solo para definiciones generales.&lt;&#x2F;p&gt;
+&lt;p&gt;Ahora que ya sabemos lo que es una dirección (se obtiene de la &lt;strong&gt;llave pública&lt;&#x2F;strong&gt;) y que la necesitaremos para recibir &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; veamos cómo se genera esa dirección. Para ello vamos definir lo que es una &lt;strong&gt;wallet&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;wallet&quot;&gt;Wallet.&lt;&#x2F;h3&gt;
+&lt;p&gt;Una &lt;strong&gt;wallet&lt;&#x2F;strong&gt; es una aplicación que entiende el protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;, es como un monedero físico en el mundo real, sin embargo, éste es virtual. Algunos consideran que en vez de llamarse monedero, tendría que llamarse &lt;strong&gt;llavero&lt;&#x2F;strong&gt; ya que no contiene monedas sino llaves. Esta aplicación es la que nos genera la dirección. Una wallet te genera un par de claves:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Claves privadas&lt;&#x2F;strong&gt;: Permiten gastar los &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Claves públicas&lt;&#x2F;strong&gt;: Se derivan de las claves privadas como mencionamos anteriormente.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Ahora, ¿dónde obtenemos una walllet, monedero o llavero?&lt;&#x2F;p&gt;
+&lt;p&gt;Este recurso es muy útil para comenzar a estudiar sobre &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;, además tienen el apartado de &lt;a href=&quot;https:&#x2F;&#x2F;bitcoin.org&#x2F;es&#x2F;elige-tu-monedero?step=1&quot;&gt;monederos&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;tipos-de-wallets&quot;&gt;Tipos de Wallets.&lt;&#x2F;h3&gt;
+&lt;p&gt;Existen dos tipos importantes de wallets:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Software&lt;&#x2F;strong&gt;: Se conectan a internet, así que la puedes descargar en el móvil o en el ordenador. &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Hardware&lt;&#x2F;strong&gt;: Se conoce como monedero frío y no se conecta a internet, sino que es un dispositivo que almacena todas las claves privadas, así que es ideal para almacenar &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;criptografia-asimetrica&quot;&gt;Criptografía asimétrica.&lt;&#x2F;h3&gt;
+&lt;p&gt;Arriba vimos los conceptos de llaves privadas y llaves públicas. &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; utiliza criptografía de clave pública para la creación de llaves. Vamos a ver rápido como funciona. La criptografía de clave pública es un método para encriptar datos con dos claves diferentes relacionadas matemáticamente:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;La llave pública&lt;&#x2F;strong&gt; se deriva de la &lt;strong&gt;llave privada&lt;&#x2F;strong&gt; y está disponible para que cualquiera pueda utilizarla. De esta &lt;strong&gt;llave pública&lt;&#x2F;strong&gt; se obtiene la dirección de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Debido al uso de dos claves en lugar de una, la criptografía de clave pública también se conoce como &lt;strong&gt;criptografía asimétrica&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;El siguiente diagrama ejemplifica de manera sencilla como funciona la &lt;strong&gt;criptografía asimétrica&lt;&#x2F;strong&gt; con nuestros chicos favoritos.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;criptografiaAsimetrica.jpeg&quot; alt=&quot;criptografiaAsimetrica&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;En este &lt;a href=&quot;https:&#x2F;&#x2F;cmapscloud.ihmc.us&#x2F;rid=1SZ5JRZW9-2KTPSQ-1RF&#x2F;PKC-resumen.pdf&quot;&gt;enlace podrás saber más&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;funciones-hash&quot;&gt;Funciones hash.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ya que hemos visto esto del par de llaves es importante comprender lo que es una función &lt;strong&gt;hash criptográfica&lt;&#x2F;strong&gt;. Esto es simplemente una función matemática que mediante un algoritmo al recibir datos de entrada te devuelve un rango de salida finito. Si tienes por ejemplo una obra completa de algún libro, al aplicarle este algoritmo criptográfico obtendrás una salida de tamaño fijo que representa esta obra completa de tu libro favorito quizás.&lt;&#x2F;p&gt;
+&lt;p&gt;En una función hash la salida:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; No permite regresar a la entrada original, a esto se le llama &lt;strong&gt;unidireccional&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; No hay límite de entrada de datos, es decir, puedes ingresar una oración o una novela de mil páginas y siempre las salida será de tamaño fijo, esto dependerá de la función que uses, en este caso, será de 256 bits que es lo que se ocupa en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;, &lt;strong&gt;SHA256&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; Además si cambias culaquier dato de entrada la salida del hash será diferente, a esto se le llama &lt;strong&gt;dispersión&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;El siguiente diagrama hace una pequeña representación de lo anterior.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;funcionHash.jpeg&quot; alt=&quot;funcionHash&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Existen varios tipos de funciones hash, el que nos interesa es el &lt;strong&gt;SHA256&lt;&#x2F;strong&gt; que es el utilizado en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Si quieres saber más sobre él &lt;a href=&quot;https:&#x2F;&#x2F;emn178.github.io&#x2F;online-tools&#x2F;sha256.html&quot;&gt;aquí&lt;&#x2F;a&gt; hay un recurso muy lindo con el que puedes jugar.&lt;&#x2F;p&gt;
+&lt;p&gt;El algoritmo &lt;strong&gt;SHA256&lt;&#x2F;strong&gt; se utiliza en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; para muchas cosas, entre ellas:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Minado&lt;&#x2F;strong&gt;: es usado en el proceso de prueba de trabajo para encontrar un bloque válido.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Transacciones&lt;&#x2F;strong&gt;: Se usa para la creación de direcciones, así como para firmar y verificar las transacciones.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Integridad de la cadena&lt;&#x2F;strong&gt;: asegura la integridad de cada bloque mediante el cálculo de los hashes de los bloques anteriores.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; &lt;strong&gt;Árboles Merkle&lt;&#x2F;strong&gt;: permite calcular las raíces Merkle que garantizan que las transacciones no han sido alteradas.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Estos conceptos los veremos más adelante. Seguimos con la función &lt;strong&gt;hash&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;firmas-digitales&quot;&gt;Firmas digitales.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ahora que hemos visto un poco acerca de las funciones hash podemos pasar a ver lo que es una &lt;strong&gt;firma digital&lt;&#x2F;strong&gt;. En &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; se utilizan las firmas digitales para comprobar la propiedad de los fondos. Una &lt;strong&gt;firma digital&lt;&#x2F;strong&gt; es como firmar un documento donde se esta verificando la autenticidad del firmante.&lt;&#x2F;p&gt;
+&lt;p&gt;En la criptografía de &lt;strong&gt;clave asimétrica&lt;&#x2F;strong&gt; la firma digital funciona de la siguiente manera:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;firmaDigital.jpeg&quot; alt=&quot;firmaDigital&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Aquí puedes saber &lt;a href=&quot;https:&#x2F;&#x2F;bitcoin.org&#x2F;files&#x2F;bitcoin-paper&#x2F;bitcoin_es.pdf&quot;&gt;más&lt;&#x2F;a&gt; acerca de esto.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;bloque&quot;&gt;Bloque.&lt;&#x2F;h3&gt;
+&lt;p&gt;Antes de comenzar a definir la cadena de bloques es necesario comprender que es un bloque en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Un bloque es una estructura de datos que contiene transacciones. Más adelante veremos que es una transacción. Las transacciones dentro de los bloques son validadas con funciones matemáticas que auntentican que el protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; sea correcto.&lt;&#x2F;p&gt;
+&lt;p&gt;Una vez que estás transacciones son agregadas, el bloque se une a una cadena de bloques previos que de igual manera contienen las transacciones que se han hecho a lo largo de la historia de &lt;strong&gt;Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Es importante mencionar que los bloques están encadenados por medio de un hash, este hash se obtiene al aplicarlo a esta estructura de datos. Cada bloque es referido por el bloque anterior en la cadena.&lt;&#x2F;p&gt;
+&lt;p&gt;Si deseas profundizar en este &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bitcoinbook&#x2F;bitcoinbook&#x2F;blob&#x2F;275c4eb8eab8800c6adc39f8def8e8f8fa356a57&#x2F;ch11_blockchain.adoc#structure-of-a-block&quot;&gt;enlace&lt;&#x2F;a&gt; podrás hacerlo.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;bloque-genesis&quot;&gt;Bloque génesis.&lt;&#x2F;h3&gt;
+&lt;p&gt;Antes de comenzar con la definición de la cadena de bloques veamos lo que es el bloque génesis. El bloque génesis es el primer bloque del libro mayor, este bloque tiene una particularidad muy importante, está codificado estáticamente dentro del protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; Core, lo que significa que no puede ser modificado.&lt;&#x2F;p&gt;
+&lt;p&gt;El bloque génesis no se generó mediante la minería como los otros bloques, veremos el concepto de minería en dos apartados más, sino que está hardcodeado en el código fuente de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Esto significa que sus datos (hash, transacciones, timestamp, etc.) están definidos directamente en el código de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; Core y no se obtienen de la red ni de una base de datos.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;Cada nodo siempre conoce el hash y la estructura del bloque génesis, la fecha fija de su creación e incluso la transacción individual que contiene.&quot;
+&lt;strong&gt;Mastering Bitcoin.&lt;&#x2F;strong&gt; Autor: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bitcoinbook&#x2F;bitcoinbook&#x2F;blob&#x2F;275c4eb8eab8800c6adc39f8def8e8f8fa356a57&#x2F;ch11_blockchain.adoc#the-genesis-block&quot;&gt;Andreas M. Antonopoulos, David A. Harding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;En resumen el bloque génesis es el ancla o el eslabón desde donde inica la cadena o el libro mayor.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;importancia-del-bloque-genesis&quot;&gt;Importancia del bloque génesis:&lt;&#x2F;h4&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Es el punto de inicio inmutable de la cadena de bloques de Bitcoin.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Su codificación estática lo hace resistente a modificaciones malintencionadas.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Representa el nacimiento de Bitcoin y está ligado a la crisis financiera de 2008.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;El bloque génesis no puede verlo nadie ya que los nodos no pueden llegar a él, si deseas verlo lo pudes hacer con su hash que es público.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Vamos ahora con la cadena de bloques.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;cadena-de-bloques&quot;&gt;Cadena de bloques.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ahora que ya vimos lo que es un bloque podemos comprender mejor la cadena de bloques. La cadena de bloques o el libro mayor, llamado así porque actúa como un registro contable que documenta todas las transacciones realizadas en la red de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Este registro es público, es decir, todo el mundo puede verlo y como vimos en el apartado anterior los bloques están vinculados al anterior mediante un hash, formando una cadena, por eso el nombre de &lt;strong&gt;cadena de bloques&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;bloque-huerfano&quot;&gt;Bloque huérfano.&lt;&#x2F;h3&gt;
+&lt;p&gt;Veamos rapido lo que es un &lt;strong&gt;bloque huérfano&lt;&#x2F;strong&gt; antes de pasar a lo siguiente pues es importante saber sobre él. También es conocido como bloque abandonado, es un bloque que ha sido minado correctamente pero no se encuentra en la cadena principal de bloques, cuando los mineros intentan resolver un bloque, y esto se da en muchas partes en todo el mundo, puede suceder que alguien resuelva primero el acertijo criptográfico. Estos bloques son válidos, pero debido a la naturaleza competitiva de la minería, solo uno de los bloques encontrados en el mismo tiempo puede ser parte de la cadena principal.&lt;&#x2F;p&gt;
+&lt;p&gt;Aunque esto puede ser confuso ya que el bloque en realidad si tiene un padre como se muestra en esta imagen.&lt;&#x2F;p&gt;
+&lt;p&gt;Para saber más de como están los bloques actualmente &lt;a href=&quot;https:&#x2F;&#x2F;fork.observer&#x2F;&quot;&gt;aquí&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;huerfano.jpeg&quot; alt=&quot;huerfano&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;mineria&quot;&gt;Minería.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ahora que vimos lo que es un bloque, la cadena que se forma con estos bloques, y además vimos a grandes rasgos como están estructurados, podemos ver como se llenan con esta información y qué pruebas y procesos se hacen para validarla. Para ello es importante comprender que es la minería y cuál es su función dentro de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Uno de los pilares más importantes dentro del protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; es la minería ya que con ella se alcanza el consenso descentralizado, no hay una autoridad central que regule esto, así que es fantástico.&lt;&#x2F;p&gt;
+&lt;p&gt;Un minero en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; es un software que tiene como objetivo resolver un problema basado en un algoritmo hash criptográfico, ha esto se le llama PoW (Proof-Of-Work) por sus siglas en inglés, prueba de trabajo que veremos más adelante.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando el minero ha resuelto el desafío, recibe una recompensa y el derecho a registrar las transacciones en la cadena de bloques, siendo esto la base del modelo de seguridad de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Lo que hacen los mineros es recoger las transacciones que han sido previamente validadas en base al protocolo de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; por parte de los nodos, estás transacciones son obtenidas de un espacio de memoria llamado &lt;strong&gt;mempool&lt;&#x2F;strong&gt; que todos los nodos tienen y que previamente fueron transmitidas por la red. Una vez que eligen las transacciones de su propia mempool comienzan con el desafío mencionado anteriormente y si logran resolverlo estás transacciones quedan registradas en el bloque en curso, y el bloque es agregado al libro mayor, con ello el minero obteniene la recompensa de bloque y las tarifas que se pagaran por ellas.&lt;&#x2F;p&gt;
+&lt;p&gt;La recompensa de bloque la veremos en el sigueinte punto, y posteriormente veremos acerca de las transacciones.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;recompensa-de-bloque&quot;&gt;Recompensa de bloque.&lt;&#x2F;h3&gt;
+&lt;p&gt;La recompensa de bloque es un incentivo que reciben los mineros por realizar un esfuerzo computacional significativo. Este incentivo es &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; recien acuñado o monedas nuevas y las tarifas que se pagan por las transacciones.&lt;&#x2F;p&gt;
+&lt;p&gt;Cada 210,000 bloques tras el bloque génesis la cantidad máxima de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; nuevos disminuye, esto es aproximadamente cada cuatro años, definido en el mismo protocolo. Esto comenzó así.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; 50 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; por bloque en enero de 2009.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; 25 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; por bloque, en noviembre de 2012.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; 12.5 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; en julio de 2016.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt; 6.25 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; en mayo de 2020.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;En base a lo anterior esto irá disminuyendo hasta aproximadamente el año 2140, lo que significa que ya no se emitirán nuevos &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Además de obtener esta recompensa, los mineros obtienen tarifas de las transacciones, ya que estás puede incluir una comisión en forma de excedente de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; entre las entradas y salidas. En el futuro cuando la recompensa disminuya las ganancias mineras provendrá de las comisiones.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;prueba-de-trabajo&quot;&gt;Prueba de trabajo.&lt;&#x2F;h3&gt;
+&lt;p&gt;Existe un protocolo llamado PoW (Proof-Of-Work) por sus siglas en inglés, es utilizado en la minería de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Este protocolo se utiliza en redes distribuidas como &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Se llama prueba de trabajo porque el protocolo requiere un esfuerzo computacional por parte del cliente, &lt;strong&gt;minero&lt;&#x2F;strong&gt;; es decir, implica la resolución de un problema criptográfico.&lt;&#x2F;p&gt;
+&lt;p&gt;El protocolo define que los mineros deben ajustar un valor llamado &lt;strong&gt;nonce&lt;&#x2F;strong&gt; (lo veremos en el siguiente apartado) y calcular el hash del bloque con un algoritmo criptográfico específico, el &lt;strong&gt;SHA-256&lt;&#x2F;strong&gt; (Secure Hash Algorithm 256-bit) para hacer un hash valido que cumpla con ciertas condiciones establecidas por la dificultad de la red.&lt;&#x2F;p&gt;
+&lt;p&gt;Este hash debe ser menor que un valor objetivo denominado &lt;strong&gt;objetivo de dificultad&lt;&#x2F;strong&gt; o &lt;strong&gt;target difficulty&lt;&#x2F;strong&gt; determinado por la dificultad en ese momento. Este campo numérico se usa como control para evitar que los datos sean manipulados.&lt;&#x2F;p&gt;
+&lt;p&gt;Los mineros prueban diferentes valores de &lt;strong&gt;nonce&lt;&#x2F;strong&gt; hasta que el hash que generan sea menor que el valor objetivo. Este proceso es completamente aleatorio. Cuando un minero encuentra una solución válida, se transmite al resto de la red. El bloque propuesto se considera válido si cumple con los criterios del protocolo.&lt;&#x2F;p&gt;
+&lt;p&gt;La dificultad del problema está ajustada de forma que, en promedio, los mineros tarden 10 minutos en encontrar una solución a este problema. Esto se ajusta cada &lt;strong&gt;2016 bloques&lt;&#x2F;strong&gt;, es decir, cada dos semanas, dependiendo de cuán rápido o lento sea el proceso de minería. Cuanto mayor sea la dificultad, más potencia computacional será necesaria para encontrar un hash válido.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Cynthia Dwork&lt;&#x2F;strong&gt; y &lt;strong&gt;Moni Naor&lt;&#x2F;strong&gt; propusieron la idea de &lt;a href=&quot;https:&#x2F;&#x2F;www.geeksforgeeks.org&#x2F;blockchain-proof-of-work-pow&#x2F;&quot;&gt;PoW&lt;&#x2F;a&gt; y más tarde &lt;strong&gt;Satoshi Nakamoto&lt;&#x2F;strong&gt; la aplicaron en el documento &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; en 2008.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Este diagrama explica como funciona.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;pow.jpeg&quot; alt=&quot;pow&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;nonce&quot;&gt;Nonce&lt;&#x2F;h3&gt;
+&lt;p&gt;Veamos lo que es el campo &lt;strong&gt;nonce&lt;&#x2F;strong&gt;. El nonce es un campo aleatorio utilizado &lt;strong&gt;una sola vez&lt;&#x2F;strong&gt; de 4 bytes (32 bits), lo que significa que puede contener valores enteros sin signo en el rango de 0 a 4,294,967,295 (que es 2^32−1).&lt;&#x2F;p&gt;
+&lt;p&gt;Lo que querrá hacer el minero es añadir bloques de transacciones al libro mayor, como lo vimos en la PoW, para ello construyen el encabezado del bloque que básicamente es el resumen de todos los datos.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Versión.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Hash del bloque.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Raiz de Merkle.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Tiempo.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Bits.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Nonce.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Cuando los mineros construyen el encabezado del bloque el único dato que cambia es el nonce, esto para obtener un hash distinto con los mismos datos de entrada. El objetivo es encontrar el hash que empiece con cierta cantidad de ceros por debajo de un cierto valor, que lo vimos arriba.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;&#x2F;strong&gt;: Con el incremento de la dificultad en la minería, los mineros también utilizan otros campos como: ExtraNonce que se encuentra dentro del scriptSig de la transacción coinbase para generar más combinaciones.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;arbol-de-merkle-y-raiz-de-merkle&quot;&gt;Árbol de Merkle y raíz de Merkle.&lt;&#x2F;h3&gt;
+&lt;p&gt;Al parece ibamos a avanzar con el tema de las transacciones, pero seguramente te preguntaste acerca de la &lt;strong&gt;raíz de Merkle&lt;&#x2F;strong&gt; y del &lt;strong&gt;árbol de Merkle&lt;&#x2F;strong&gt;. Este concepto fue introducido por &lt;a href=&quot;https:&#x2F;&#x2F;es.wikipedia.org&#x2F;wiki&#x2F;Ralph_Merkle&quot;&gt;Ralph C. Merkle&lt;&#x2F;a&gt; y es una estructura de datos utilizada en criptografía y en sistemas de archivos distribuidos como &lt;strong&gt;Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Primero veamos el &lt;strong&gt;Árbol de Merkle&lt;&#x2F;strong&gt;. Este describe una estructura de datos ramificados, generalmente se muestran al revés con la &lt;strong&gt;raíz&lt;&#x2F;strong&gt; en la parte superior y las &lt;strong&gt;hojas&lt;&#x2F;strong&gt; en la parte inferior, son binarios que contienen hashes criptográficos. Se usa para verificar la integridad y consistencia de grandes conjuntos de datos de manera eficiente.&lt;&#x2F;p&gt;
+&lt;p&gt;La &lt;strong&gt;Raíz de Merkle&lt;&#x2F;strong&gt; es el hash final que se obtiene en la parte superior del &lt;strong&gt;árbol de Merkle&lt;&#x2F;strong&gt; después de calcular todos los hashes en los niveles inferiores. Es un identificador único de todo el conjunto de datos. Si un solo dato cambia, la raíz cambia, lo que permite verificar la integridad de los datos sin necesidad de almacenarlos todos.&lt;&#x2F;p&gt;
+&lt;p&gt;Vamos con &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Las transacciones en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; residen en el cuerpo de un bloque, lo cual forma un &lt;strong&gt;árbol de Merkle&lt;&#x2F;strong&gt;. Este árbol es una estructura binaria completa, interconectada por punteros hash. Ahora imagina un árbol, las hojas serían como los nodos de este árbol, y cada nodo padre surge de la combinación del hash &lt;strong&gt;SHA-256&lt;&#x2F;strong&gt; de sus dos nodos hijos.&lt;&#x2F;p&gt;
+&lt;p&gt;Para ello, se realiza el hash de los nodos hijos y se concatenan los resultados obtenidos para calcular los nodos padres. Esta metodología se repite capa por capa de forma ascendente. Esta estructura de datos criptográfica reduce la necesidad de transmisión de datos y agiliza la complejidad computacional.&lt;&#x2F;p&gt;
+&lt;p&gt;En la imagen de arriba se ven cuatro transacciones abajo, A,B,C y D que serían las hojas (nodos), en cada transacción se aplica un doble hash con el algoritmo &lt;strong&gt;SHA256&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Hash de Tx A = SHA256(SHA256(Tx A)).&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;En seguido los pares consecutivos de hojas se resumen en un nodo padre concatenando los dos hash y combinándolos.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Hash de TxA y Hash de TxB = SHA256(SHA256(HA + HB)).&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Continuando el proceso hasta que solo exista un nodo en la parte superior (raiz) almacenandose en el encabezado del bloque un hash de 32 bytes. Así es como se resumen las transacciones.&lt;&#x2F;p&gt;
+&lt;p&gt;El valor hash que resume todas las transacciones en la &lt;strong&gt;raíz de Merkle.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;raizMerkle.jpeg&quot; alt=&quot;raizMerkle&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;objetivo-de-dificultad&quot;&gt;Objetivo de dificultad&lt;&#x2F;h3&gt;
+&lt;p&gt;No podemos dejar pasar este punto súper importante acerca de como se hace el ajuste de dificultad que vimos en el apartado de &lt;strong&gt;minería&lt;&#x2F;strong&gt;, más bien vamos definir como funciona esto.&lt;&#x2F;p&gt;
+&lt;p&gt;Es un ajuste que se hace para regular la dificultad de la minería, con ello se asegura que los bloques se sigan minando aproximadamente cada 10 minutos. Se produce cada 2016 bloques (aproximadamente cada dos semanas), en función del tiempo que tardaron en minarse esos últimos 2016 bloques.&lt;&#x2F;p&gt;
+&lt;p&gt;Para ello se utiliza un campo llamado &lt;strong&gt;target&lt;&#x2F;strong&gt; que es un número de 256 bits que define el valor máximo que puede tener un hash válido para que un bloque sea aceptado. Cuanto más bajo sea el target, más difícil es encontrar un hash menor que ese valor, y por lo tanto, mayor es la dificultad.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Si la red está generando bloques en un periodo inferior a los diez minutos, la dificultad de minado aumenta y si por el contrario los bloques se están generando de manera más lenta, la dificultad de minado disminuye.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Y luego lo más bonito, cuando se produce este ajuste, la reasignación de la dificultad se produce de forma automática y en cada nodo independientemente. Así que cada dos semanas ~ todos los nodos reorientan la dificultad de PoW.&lt;&#x2F;p&gt;
+&lt;p&gt;En resumen.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;El Target Adjustment (ajuste del objetivo) se refiere al cambio del target (objetivo de hash) de la prueba de trabajo &lt;strong&gt;PoW&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;La dificultad es una forma de expresar este cambio de &lt;strong&gt;target&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;hashrate&quot;&gt;Hashrate.&lt;&#x2F;h3&gt;
+&lt;p&gt;La tasa de hash es una métrica relacionada con el proceso de minar &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;. Esta métrica representa la cantidad de procesos que un equipo puede realizar por segundo para resolver el rompecabezas criptográfico.&lt;&#x2F;p&gt;
+&lt;p&gt;Si la tasa de hash es alta puede existir una mayor probabilidad de resolver el acertijo criptográfico, lo que aumenta las posibilidades del minero de recibir una compensación por procesar transacciones.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;transacciones&quot;&gt;Transacciones.&lt;&#x2F;h3&gt;
+&lt;p&gt;Ahora si podemos pasar a las transacciones, una transacción es una estructura de datos que representa el movimiento de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; de una dirección a otra dentro de la red. Técnicamente, una transacción es un conjunto de entradas y salidas, asegurado criptográficamente mediante firmas digitales y validado por los &lt;strong&gt;nodos&lt;&#x2F;strong&gt; de la red. Existe una base de datos en cada &lt;strong&gt;nodo completo&lt;&#x2F;strong&gt; de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; que nos dice quien controla cierta cantidad de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;. Lo de los nodos lo veremos más adelante.&lt;&#x2F;p&gt;
+&lt;p&gt;Las transacciones lo que hacen es desbloquear y bloquear &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; por medio de criptografía. Vamos a profundizar un poco más. Cuando se crea una transacción, es decir, cuando envias &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; a alguien, se crea una salida, esta salida contiene la llave &lt;strong&gt;pública&lt;&#x2F;strong&gt; que vimos en el apartado de criptografía, recordarás que la dirección contiene esta llave, y esta dirección fue creada por el emisor, así que cuando reciba los &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; los podrá desbloquear con su llave &lt;strong&gt;privada&lt;&#x2F;strong&gt; correspondiente a la clave &lt;strong&gt;pública&lt;&#x2F;strong&gt; creando una &lt;strong&gt;firma digital&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;No te preocupes de como se hace internamente puesto que esto lo hacen las wallets o los nodos si es que usarás o estás ejecutando ya uno.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Estructura de una transacción en Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Campo&lt;&#x2F;th&gt;&lt;th&gt;Tamaño (bytes)&lt;&#x2F;th&gt;&lt;th&gt;Descripción&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Versión&lt;&#x2F;td&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;Número de versión de la transacción.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Flag (opcional)&lt;&#x2F;td&gt;&lt;td&gt;2&lt;&#x2F;td&gt;&lt;td&gt;Solo en SegWit (0x0001)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Conteo de Entradas&lt;&#x2F;td&gt;&lt;td&gt;1 - 9&lt;&#x2F;td&gt;&lt;td&gt;Número de entradas (inputs) en la transacción, codificado en formato VarInt.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Entradas (Inputs)&lt;&#x2F;td&gt;&lt;td&gt;Variable&lt;&#x2F;td&gt;&lt;td&gt;Lista de entradas, cada una con los campos descritos a continuación.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Conteo de Salidas&lt;&#x2F;td&gt;&lt;td&gt;1 - 9&lt;&#x2F;td&gt;&lt;td&gt;Número de salidas (outputs) en la transacción, codificado en formato VarInt.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Salidas (Outputs)&lt;&#x2F;td&gt;&lt;td&gt;Variable&lt;&#x2F;td&gt;&lt;td&gt;Lista de salidas, cada una con los campos descritos a continuación.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Testigos (opcional)&lt;&#x2F;td&gt;&lt;td&gt;Variable&lt;&#x2F;td&gt;&lt;td&gt;Solo en SegWit, contiene firmas y pruebas de autenticidad&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Locktime&lt;&#x2F;td&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;Tiempo de bloqueo (opcional) que especifica cuándo puede ser añadida al bloque.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Para que una transacción sea válida se debe cumplir con lo siguiente&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Las firmas deben ser correctas.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;No debe haber doble gasto.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Los BTC gastados deben ser menores o iguales a los disponibles.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;La estructura de la transacción debe cumplir las reglas de consenso.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;transaccion-coinbase&quot;&gt;Transacción coinbase.&lt;&#x2F;h3&gt;
+&lt;p&gt;En la parte de minería mencionamos algo acerca de la transacción &lt;strong&gt;coinbase&lt;&#x2F;strong&gt;. Esta transacción es la primera transacción en un bloque y es colocada por el minero cuando construye un bloque, cuando el incentivo por resolver el acertijo matemático se le otorque, será a esta transacción. Las salidas de esta transacción coinbase serán nuevos &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; recien acuñados.&lt;&#x2F;p&gt;
+&lt;p&gt;Características de la Transacción Coinbase&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Es la primera transacción en un bloque.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;No tiene entradas válidas (no gasta UTXOs).&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Genera nuevas monedas y recoge las tarifas de transacción.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;El minero puede incluir datos arbitrarios en el campo de &lt;strong&gt;coinbase&lt;&#x2F;strong&gt;.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;La cantidad de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; en una coinbase transaction se calcula como.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Recompensa = Subsidio + Tarifas de Transacción.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Donde&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Subsidio &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; nuevos generados (inicialmente 50 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;, actualmente 6.25 &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;).&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Tarifas Acumulación de las comisiones de todas las transacciones del bloque.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Satoshi Nakamoto&lt;&#x2F;strong&gt; incluyó este mensaje como crítica al sistema financiero tradicional. &lt;strong&gt;The Times 03&#x2F;Jan&#x2F;2009 Chancellor on brink of second bailout for banks&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; impone una regla para evitar problemas con los &lt;strong&gt;bloques huérfanos&lt;&#x2F;strong&gt; y asegurar que las recompensas de minería sean legítimas antes de gastarse. Deben transcurrir 100 bloques (~16.6 horas en promedio) antes de poder usar esos &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;entradas-y-salidas&quot;&gt;Entradas y salidas.&lt;&#x2F;h3&gt;
+&lt;p&gt;Veamos ahora lo que son las &lt;strong&gt;entradas&lt;&#x2F;strong&gt; y las &lt;strong&gt;salidas&lt;&#x2F;strong&gt; de una transacción.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando recibes &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; generas una dirección a donde los fondos te llegaran, en esa dirección es tu clave pública. Cuando quieras gastarlos, tendrás que desbloquearlos con tu &lt;strong&gt;clave privada&lt;&#x2F;strong&gt; firmándola. Así mismo la persona que te envia ese &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; desbloquerá los saldos que tiene con su llave privada. Este proceso es repetitivo cuando se crean transacciones, es decir, se generan entradas y salidas.&lt;&#x2F;p&gt;
+&lt;p&gt;Lo veremos con Alicia y Bob como ejemplo para que quede más claro.&lt;&#x2F;p&gt;
+&lt;p&gt;Alicia al recibir &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; tendrá una &lt;strong&gt;entrada&lt;&#x2F;strong&gt; y Bob al enviarlos tendrá una &lt;strong&gt;salida&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Las salidas están bloquedas con un &lt;strong&gt;scriptsig&lt;&#x2F;strong&gt; que veremos en el siguiente apartado, por ahora solo quedate con que es un script de código que sirve para verificar la firma de la persona que recibirá los &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;. Estás salidas contienen una cantidad de &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; especifica (imagina que es una moneda de $20) y un bloqueo.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;&#x2F;strong&gt;: si esta salida contiene una cantidad exacta, y tienes que enviar una cantidad menor a la contenida, se crearán varias salidas, como si dieras la moneda de $20 y se te regresara cambio.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Cada &lt;strong&gt;entrada&lt;&#x2F;strong&gt; de una transacción refiere a un Unspent Transaction Output (UTXO) anterior. &lt;a href=&quot;https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;utxo&#x2F;&quot;&gt;Aquí&lt;&#x2F;a&gt; hay una infografía por si quieres saber más.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Cada &lt;strong&gt;entrada&lt;&#x2F;strong&gt; tiene un scriptSig que incluye la firma del remitente o txinwitness en el caso de SegWit.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Cada &lt;strong&gt;salida&lt;&#x2F;strong&gt; especifica cuánto &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt; se envía y a quién.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Cada &lt;strong&gt;salida&lt;&#x2F;strong&gt; tiene un scriptPubKey que especifica las condiciones para gastar los bitcoin.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;bitcoin-script&quot;&gt;Bitcoin Script.&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; utiliza un sistema de script (códigos), &lt;a href=&quot;https:&#x2F;&#x2F;en.bitcoin.it&#x2F;wiki&#x2F;Script&quot;&gt;Bitcoin Script&lt;&#x2F;a&gt; para las transacciones. Una moneda en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; está bloqueada con condiciones bajo las cuales se puede gastar. Las condiciones de bloqueo están codificadas con una clave ScriptPubKey. La prueba de desbloqueo está codificada en un scriptSig. Ambos forman un script completo y valido.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando Bob desea gastar algunos &lt;strong&gt;bitcoin&lt;&#x2F;strong&gt;, debe proporcionar una transacción de &lt;strong&gt;entrada&lt;&#x2F;strong&gt; con un ScriptSig que incluye su firma y su clave pública. La red de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; combinará el ScriptSig de la &lt;strong&gt;entrada&lt;&#x2F;strong&gt; con el ScriptPubKey de la &lt;strong&gt;salida&lt;&#x2F;strong&gt; y ejecutará el script combinado para verificar la validez de la transacción.&lt;&#x2F;p&gt;
+&lt;p&gt;Básicamente sería así:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;ScriptSig: script de desbloqueo, que requiere de una clave pública y una firma digital.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;ScriptPubKey: script de bloqueo, que contiene un hash de clave pública, también denominada dirección.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;hr &#x2F;&gt;
+&lt;h3 id=&quot;tipos-de-transacciones&quot;&gt;Tipos de Transacciones.&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; permite múltiples tipos de transacciones según el ScriptPubKey utilizado:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;P2PKH (Pay-to-PubKey-Hash): Pago a una dirección estándar.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;P2SH (Pay-to-Script-Hash): Para scripts más complejos (multisig, contratos).&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;SegWit (P2WPKH, P2WSH): Mejora la eficiencia y reduce fees.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span style=&quot;color: #9858b0;&quot;&gt;Taproot (P2TR): Implementado en 2021 con Schnorr signatures.&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Si quieres profundizar más sobre los tipos de transacciones en este &lt;a href=&quot;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;document&#x2F;10477780&quot;&gt;enlace&lt;&#x2F;a&gt; seguro aprenderás un montón.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;&lt;strong&gt;Espero que esta información sea de utilidad.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>El problema de los generales bizantinos.</title>
+          <pubDate>Tue, 06 Aug 2024 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/bizantinos/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/bizantinos/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/bizantinos/">&lt;h3 id=&quot;el-problema-de-los-generales-bizantinos&quot;&gt;El problema de los generales bizantinos.&lt;&#x2F;h3&gt;
+&lt;p&gt;Es un problema fundamental en el campo de la informática, específicamente en el estudio de los sistemas distribuidos y la tolerancia a fallos y es crucial en el diseño de sistemas distribuidos, ya que muchos sistemas modernos están compuestos por múltiples nodos que deben coordinarse para funcionar correctamente. Fue hecho por &lt;strong&gt;Robert Shostak&lt;&#x2F;strong&gt; y desarrollado con &lt;strong&gt;Leslie Lamport&lt;&#x2F;strong&gt; y &lt;strong&gt;Marshall Pease en 1982&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Una de las soluciones más conocidas al problema de los generales bizantinos es el algoritmo de consenso bizantino &lt;strong&gt;(Byzantine Fault Tolerance, BFT)&lt;&#x2F;strong&gt;. Este tipo de algoritmos permite que los sistemas distribuidos lleguen a un consenso a pesar de la presencia de fallos bizantinos, es decir, fallos en los que los componentes pueden comportarse de manera arbitraria o maliciosa.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; no utiliza directamente el modelo clásico de tolerancia a fallos bizantinos &lt;strong&gt;(BFT)&lt;&#x2F;strong&gt; en su algoritmo de consenso. En cambio, utiliza un enfoque diferente conocido como Prueba de Trabajo &lt;strong&gt;(Proof of Work, PoW)&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;lo-podemos-representar-con-la-siguiente-analogia&quot;&gt;Lo podemos representar con la siguiente analogía:&lt;&#x2F;h4&gt;
+&lt;p&gt;Imaginemos una antigua ciudad griega Bizancio que quiere ser atacada por un grupo de generales que tienen su campamento con sus respectivas tropas en distintos puntos rodeándola, pondremos como ejemplo que son siete, así que la mejor manera de atacarla es que lo hagan al mismo tiempo.&lt;&#x2F;p&gt;
+&lt;p&gt;Esto implica que todos se pongan de acuerdo, es decir; que lleguen a un &quot;consenso&quot;, así que cada general podría mandar un mensaje por medio de un mensajero a otro campamento con las instrucciones para el ataque, sin embargo, este mensajero podría ser un traidor o la información podría ser interceptada.&lt;&#x2F;p&gt;
+&lt;p&gt;Así que tenemos seis generales con su campamento cada uno.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt; El campamento 1 manda a un mensajero al campamento 2 con el mensaje: Atacar al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;span&gt; El campamento 2 manda a un mensajero al campamento 3 con el mensaje: Atacar al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;span&gt; El campamento 3 manda a un mensajero al campamento 4 con el mensaje: Atacar al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;span&gt; El campamento 4 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;span&gt; El campamento 5 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;span&gt; El campamento 6 manda a un mensajero al campamento 5 con el mensaje: Retirarse al amanecer, 5:00 am
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Como puedes darte cuenta el mensaje que envía el campamento 4 al 5 no es correcto, así que aquí ya no podría suceder el ataque cortinado.&lt;&#x2F;p&gt;
+&lt;p&gt;Ahora esta analogía la llevaremos a los sistemas informáticos, específicamente a &lt;strong&gt;Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;La siguiente ilustración representa a los generales como nodos alrededor de una ciudad (el libro mayor), con algunos generales honestos (marcados con un &lt;strong&gt;check verde&lt;&#x2F;strong&gt;) y algunos traidores (marcados con una &lt;strong&gt;X roja&lt;&#x2F;strong&gt;). Cada general está conectado con líneas de comunicación.&lt;&#x2F;p&gt;
+&lt;p&gt;También se muestra un minero con un pico resolviendo la &lt;strong&gt;Prueba de Trabajo&lt;&#x2F;strong&gt; para proponer un nuevo bloque de transacciones, destacando la importancia de la regla de la mayoría para la aceptación del bloque.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;bizantinos.png&quot; alt=&quot;bizantinos&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;El problema de los generales bizantinos no se había resuelto hasta la llegada de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt;, especificamente hasta que lo resolvió Satoshi Nakamoto. Como sabes el software de &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; es libre, así que puedes descargarlo. Todas las personas que ejecutan este software tienen una copia exacta de la cadena de bloques de manera local en sus computadoras. Con esto podemos deducir que si un nodo envía un mensaje a la red es validado y por ende todos los demás nodos tiene la misma información.&lt;&#x2F;p&gt;
+&lt;p&gt;Con lo mencionado acerca de los generales que podrían tener un mensajero traidor o malicioso se refiere a que los nodos podrían transmitir información errónea, quizás que falle un algoritmo y se produzca un error, de comunicación, o en su defecto sí exista un nodo malicioso. Así que la clave para solucionar este fallo es el consenso, es decir; una comunicación asertiva.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;como-se-hace-esto&quot;&gt;¿Cómo se hace esto?&lt;&#x2F;h4&gt;
+&lt;p&gt;Se hace a partir de definir un conjunto de reglas aplicables a todos, en las cuales se identifica a cada nodo de forma inequívoca.&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando &lt;strong&gt;Bob&lt;&#x2F;strong&gt; hace una transacción cada nodo empieza a compilar esta transacción en un estado de &lt;em&gt;&lt;strong&gt;transacción no confirmada&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;.
+Esta transacción pasa por un proceso de minería: &lt;strong&gt;la prueba de trabajo&lt;&#x2F;strong&gt;, verificando que el hash de la transacción sea correcto, si lo es lo incluye en el bloque.
+La transacción pasa del estado &lt;em&gt;&lt;strong&gt;transacción no confirmada&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; a &lt;em&gt;&lt;strong&gt;transacción confirmada&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; para cada nodo.
+Con esto podemos estar seguros de que la transacción sea tomada como valida y llegar al consenso.&lt;&#x2F;p&gt;
+&lt;p&gt;Así que en &lt;strong&gt;Bitcoin&lt;&#x2F;strong&gt; las reglas son iguales para todos.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero sea de utilidad esta información.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Mapa de Bitcoin y Lightning.</title>
+          <pubDate>Sun, 13 Nov 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/recursos/map/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/recursos/map/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/recursos/map/">&lt;h2 id=&quot;elige-el-lugar-mas-cercano-a-tu-ubicacion&quot;&gt;Elige el lugar más cercano a tu ubicación.&lt;&#x2F;h2&gt;
+&lt;h4 id=&quot;en-este-mapa-podras-encontrar-lugares-donde-puedas-hacer-compras-con-bitcoin-ya-sea-en-lightning-o-en-onchain&quot;&gt;En este mapa podrás encontrar lugares donde puedas hacer compras con bitcoin ya sea en lightning o en onchain.&lt;&#x2F;h4&gt;
+&lt;p&gt;Si deseas hacer una donación a los desarrolladores puedes hacerlo en el siguiente &lt;a href=&quot;https:&#x2F;&#x2F;btcmap.org&#x2F;support-us&quot;&gt;enlace&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;iframe
+	id=&quot;btcmap&quot;
+	title=&quot;BTC Map&quot;
+	width=&quot;900&quot;
+	height=&quot;700&quot;
+	allowfullscreen=&quot;true&quot;
+	allow=&quot;geolocation&quot;
+	src=&quot;https:&#x2F;&#x2F;btcmap.org&#x2F;map?onchain&amp;lightning&quot;
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;&lt;strong&gt;Espero que esta información sea de utilidad.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Juguemos con blockclock mini.</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/block-clock/">&lt;head&gt;
+  &lt;!-- Import the required widget code and styles. --&gt;
+  &lt;script src=&quot;https:&#x2F;&#x2F;moscowtime.xyz&#x2F;widget.js&quot;&gt;&lt;&#x2F;script&gt;
+  &lt;!-- When the window has finished loading, mount the widget in its appropriate place. --&gt;
+  &lt;script&gt;
+    let blockClock;
+    window.onload = function () {
+      blockClock = mountBlockClock();
+    };
+  &lt;&#x2F;script&gt;
+  &lt;!-- NOTE: BLOCKCLOCK is a registered trademark of Coinkite Inc. --&gt;
+&lt;&#x2F;head&gt;
+&lt;div
+  id=&quot;blockclock-container&quot;
+  class=&quot;moscowtime usdprice blockheight interval-3000&quot;
+  style=&quot;max-width: 700px&quot;
+&gt;&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;que-es-blockclock-mini&quot;&gt;¿Qué es BLOCKCLOCK mini?&lt;&#x2F;h3&gt;
+&lt;p&gt;Es un reloj Bitcoin, fabricado por &lt;a href=&quot;https:&#x2F;&#x2F;store.coinkite.com&#x2F;store&#x2F;block-clock&quot;&gt;Coinkite&lt;&#x2F;a&gt; que lo cataloga como un “artículo de larga duración” de 7 dígitos, cuesta USD 399 dólares y sirve también para otras criptomonedas, muestra el valor en tiempo real de Bitcoin, o cualquier otra criptomoneda que le pidas, además del último bloque minado y la hora, esto en base a la configuración que le des.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;por-que-la-hora-de-moscu-en-este-widget&quot;&gt;¿Por qué la hora de Moscú en este Widget?&lt;&#x2F;h3&gt;
+&lt;p&gt;Si preguntas la hora en Twitter probablemente te digan: &quot;Es hora de Moscú&quot;. Esto se debe porque el fundador y CEO de Twitter, Jack Dorsey, transmitía en vivo desde su casa ante las sesiones del congreso de Estados Unidos sobre fake news que han influido en las elecciones norteamericanas y en la opinión pública, en los últimos años, cuando se destacó en el fondo un objeto en forma de reloj, llamando la atención y creando interés sobre el dispositivo.&lt;&#x2F;p&gt;
+&lt;p&gt;El investigador en ciberseguridad Chris Vickery vio que algo no estaba bien, el reloj marcaba &quot;1952&quot;, lo que era extraño para la supuesta ubicación de Jack pues se mostraba que el sol aún estaba. Entoces si no estaba en Moscú, ¿qué quizó dar a enter Jack?. Vickery consideró que fue un tipo señal en &quot;código morse&quot;, una forma de señalar los vínculos de Rusia con la desinformación en Estados Unidos.&lt;&#x2F;p&gt;
+&lt;p&gt;Después de este suceso los Bitcoiners usan &quot;Moscú time&quot; indistintamente con la tasa de conversión de USD a sat, así que cuando Bitcoin sube, la hora de Moscú baja y cuando la hora llegue a cero se producirá la llamada &lt;a href=&quot;https:&#x2F;&#x2F;nakamotoinstitute.org&#x2F;mempool&#x2F;hyperbitcoinization&#x2F;&quot;&gt;hiperbitcoinización.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Jack es una gran fanático del Bitcoin. Un dato interesante sobre Jack es que dijo en 2018 que cree que Bitcoin se convertirá en la moneda única del mundo dentro de 10 años.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;como-instalar-el-widget-de-blockclock&quot;&gt;¿Cómo instalar el Widget de BLOCKCLOCK?&lt;&#x2F;h3&gt;
+&lt;p&gt;Puedes encontrar el Widget &lt;a href=&quot;https:&#x2F;&#x2F;moscowtime.xyz&quot;&gt;aquí&lt;&#x2F;a&gt;, es muy fácil de configurar, solo necesitas copiar unas cuantas líneas de código y listo, espero esta información te haya sido de gran utilidad y puedas instalar tu Widget en tu sitio Web si así lo deseas.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero haya sido infromación de utilidad.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>¿Qué es Bitcoin?</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/que-es-bitcoin/">&lt;h3 id=&quot;introduccion&quot;&gt;Introducción&lt;&#x2F;h3&gt;
+&lt;p&gt;Bitcoin, es una moneda digital, un sistema de pago que se ejecuta por un software disponible para toda la gente, es decir es de código abierto y está constantemente mejorándose y actualizándose gracias a los desarrolladores que están trabajando en ello, así que tú puedes descargar el software y ejecutarlo para tu propio uso, es fácilmente accesible ya que puede ejecutarse sobre una amplia variedad de dispositivos, incluyendo laptops y Smartphone´s,&lt;&#x2F;p&gt;
+&lt;p&gt;Cuando tú descargas el software de Bitcon, estás contribuyendo a que las reglas de Bitcoin se cumplan.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin no solo es dinero digital, es un activo, una red internacional de pagos descentralizada, es decir; no lo sustenta ningún gobierno, ni tampoco los bancos logrando con esto, una revolución tecnológica con posibilidades infinitas para la humanidad ¿por qué?, porque Bitcoin ya esta camabiando el sistema financiero, social y político, estamos viviendo un momento histórico.&lt;&#x2F;p&gt;
+&lt;p&gt;Bitcoin vive en bits, es dinero digital, es como los dólares, los pesos o los euros, pues permite el intercambio de bienes y servicios, puedes enviar dinero a personas y organizaciones y también permite el resguardo de valor y funciona en base al consenso de muchos participantes, Andreas Antonopoulos, dice en su libro Internet del dinero: Bitcoin es el Dinero de la Gente, pues es abierto y global ya que todo el mundo lo puede utilizar y no tiene fronteras que lo detengan, es rápido y seguro, así que Bitcoin es nuestro dinero.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;quien-creo-bitcoin&quot;&gt;¿Quién creo Bitcoin?&lt;&#x2F;h3&gt;
+&lt;p&gt;Satoshi Nakamoto quien publicara un documento titulado &lt;a href=&quot;https:&#x2F;&#x2F;bitcoin.org&#x2F;files&#x2F;bitcoin-paper&#x2F;bitcoin_es_latam.pdf&quot;&gt;Bitcoin: Un Sistema de Dinero Electrónico Peer-to-Peer&lt;&#x2F;a&gt; de nueve páginas, el 1ª de noviembre de 2008, donde aseguraba que había encontrado la forma de crear una red descentralizada sin el control de una autoridad, que no necesita permiso de un gobierno, banco o corporación para usarla, es decir, crear nuestro propio dinero, esto en base al movimiento Cypherpunk un grupo de personas quienes cimentaron la columna vertebral de lo que hoy es Bitcoin donde se sustentaba la importancia de la privacidad y la libertad a través de la criptografía, matemáticas, informática, filosofía y política, sin ellos Bitcoin no existiría. Puedes acceder al manifiesto Cypherpunk &lt;a href=&quot;https:&#x2F;&#x2F;nakamotoinstitute.org&#x2F;cypherpunk-manifesto&#x2F;&quot;&gt;aquí.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Satoshi Nakamoto se retiró del público en abril de 2011, ni Satoshi Nakamoto ni nadie más posee control sobre el sistema Bitcoin, el cual opera basado en principios matemáticos completamente transparentes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;cuantas-monedas-habra&quot;&gt;¿Cuántas monedas habrá?&lt;&#x2F;h3&gt;
+&lt;p&gt;El suministro de esta moneda se define por su protocolo, es decir; solo 21 millones de bitcoins llegaran a existir, esperando que el último sea minado para el año 2140.&lt;&#x2F;p&gt;
+&lt;p&gt;Se podría pensar que estos 21 millones son insuficientes para la población mundial, sin embargo, es altamente divisible, la denominación más pequeña es 0.00000001 BTC (10 -8 BTC), y esta denominación es llamada Satoshi, en honor a su creador, así que en un Bitcoin existen 100 millones de estos satoshis, cuando se llegue a los 21 millones habrán un total de 2100 trillones de satoshis.&lt;&#x2F;p&gt;
+&lt;p&gt;Para todos aquellos que empiezan a conocer Bitcoin, esto puede ser un poco confuso, sin embargo conforme vas cayendo en la madriguera del conejo querrás aprender más.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;como-trasciende-fronteras-bitcoin&quot;&gt;¿Cómo trasciende fronteras Bitcoin?&lt;&#x2F;h3&gt;
+&lt;p&gt;Es una moneda no política (no depende de ninguna institución centralizada).&lt;&#x2F;p&gt;
+&lt;p&gt;En la actualidad millones de personas cuentan con acceso a internet, con Bitcoin puedes ser parte de la economía internacional desde cualquier parte del mundo, sin el control del gobierno y con comisiones muy bajas, sin requisitos gubernamentales ya que solo necesitas descargar una aplicación para formar parte de la economía, imagínate el poder de conectar a miles de personas en diferentes partes del mundo para hacer transacciones monetarias sin que nadie ejerza control total sobre ello, Bitcoin es la creación más grande que ha tenido la humanidad.&lt;&#x2F;p&gt;
+&lt;p&gt;En pocos segundos los seres humanos pueden hacer transacciones monetarias grandes o pequeñas a través de la red de Bitcoin, como si enviarás un email donde no hay nadie entre el emisor y el receptor, y este es solo el principio pues con Bitcoin será posible la extinción de dominio, proteger la privacidad y mantener la seguridad tanto de los individuos como de las organizaciones así como tener libertad financiera, la dignidad humana, un gran impacto social en los países en vía de desarrollo y mucho más.&lt;&#x2F;p&gt;
+&lt;p&gt;Existen muchas maneras de obtener Bitcoin, pues es dinero, comprándolo en cajeros, a otras personas o en plataformas online como hodlhodl o Bisq, otra manera de obtenerlo es ganándolo, vendiendo bienes o servicios, o jugando, existen muchas aplicaciones que te permiten ganar en satoshis, con Bitcoin tienes la facilidad de lograr esto mediante teléfonos inteligentes que harán estas transacciones rápidas y seguras, así que Bitcoin es portable.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;que-wallet-es-recomendada-para-empezar&quot;&gt;¿Qué wallet es recomendada para empezar?&lt;&#x2F;h3&gt;
+&lt;p&gt;Considero que para comenzar a utilizar Bitcoin es recomdable utilizar Lightning para una mejor experiencia, puede consultar acerca de este tema en el apartado exclusivo de Lightning. Aquí dejo algunas en orden de facilidad de uso, que cada cual elija e investiga sobre la que cubra sus necesidades.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.walletofsatoshi.com&#x2F;&quot;&gt;Wallet of Satoshi&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;muun.com&#x2F;es&#x2F;&quot;&gt;Muun&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bluewallet.io&#x2F;&quot;&gt;BlueWallet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;breez.technology&#x2F;&quot;&gt;Breez&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;&lt;strong&gt;Espero que esta información sea de utilidad.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>UTXO</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/utxo/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/utxo/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/utxo/">&lt;h3 id=&quot;utxo&quot;&gt;UTXO&lt;&#x2F;h3&gt;
+&lt;p&gt;Gracias a la analogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;infografia.png&quot; alt=&quot;infografia&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;aqui-el-tweet&quot;&gt;Aquí el tweet&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;es&quot; dir=&quot;ltr&quot;&gt;Cuando recién escuché sobre UTXO&amp;#39;s no lograba comprender porqué las transacciones incluyen cambio devuelto hacia uno, como si pagáramos en efectivo en la tienda de la esquina.&lt;br&gt;&lt;br&gt;Los humanos somos mas buenos imaginando cosas físicas, así que creo que esta analogía ayuda:&lt;&#x2F;p&gt;&amp;mdash; thebatzuk⚡ (@thebatzuk) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;thebatzuk&#x2F;status&#x2F;1445132759211679746?ref_src=twsrc%5Etfw&quot;&gt;October 4, 2021&lt;&#x2F;a&gt;&lt;&#x2F;blockquote&gt; &lt;script async src=&quot;https:&#x2F;&#x2F;platform.twitter.com&#x2F;widgets.js&quot; charset=&quot;utf-8&quot;&gt;
+</description>
+      </item>
+      <item>
+          <title>Pódcast&#x27;s y vídeos acerca de Bitcoin y Lightning.</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/recursos/podcast/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/recursos/podcast/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/recursos/podcast/">&lt;h3 id=&quot;video-sobre-como-montar-tu-nodo-en-un-maquina-the-bitcoin-machine&quot;&gt;Vídeo sobre como montar tú nodo en un máquina The Bitcoin Machine.&lt;&#x2F;h3&gt;
+&lt;iframe 
+	width=&quot;700&quot; 
+	height=&quot;400&quot; 
+	src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Pc4SVlTmj7Y&quot; 
+	title=&quot;YouTube video player&quot; 
+	frameborder=&quot;0&quot; 
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+	allowfullscreen
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h3 id=&quot;video-creado-originalmente-por-el-usuario-de-x-tip-nz&quot;&gt;Vídeo creado originalmente por el usuario de X &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tip_nz&quot;&gt;@TIP_NZ&lt;&#x2F;a&gt;.&lt;&#x2F;h3&gt;
+&lt;p&gt;Este vídeo es un proyecto colaborativo que muestra el porque fue creado &lt;strong&gt;Bitcoin.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Voces:&lt;&#x2F;strong&gt; una servidora y Alfre Mancera&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Traducción:&lt;&#x2F;strong&gt; Arkad y MrRabbitHodl&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Montaje:&lt;&#x2F;strong&gt; GUERRILLA&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;iframe 
+	width=&quot;700&quot; 
+	height=&quot;400&quot; 
+	src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;7FYc1igSIGg?si=MX5IzPy8xWVL_NY5&quot; 
+	title=&quot;YouTube video player&quot; 
+	frameborder=&quot;0&quot; 
+	allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;
+	allowfullscreen
+&gt;
+&lt;&#x2F;iframe&gt;
+&lt;h4 id=&quot;gracias&quot;&gt;Gracias.&lt;&#x2F;h4&gt;
+&lt;p&gt;Espero que esta información sea de utilidad.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Privacidad en Bitcoin</title>
+          <pubDate>Fri, 18 Jun 2021 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/publications/seguridad/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/publications/seguridad/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/publications/seguridad/"></description>
+      </item>
+    </channel>
+</rss>

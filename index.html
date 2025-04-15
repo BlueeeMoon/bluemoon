@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div id="fullpage">
+  
+  <div class="section hero is-fullheight page" id="about">
+    
+
+<div class="is-flex is-flex-direction-column" style="height: 100%;">
+  <div class="flex: 1;">
+    <h1>Blue <span class="text-primary">Moon</span></h1>
+    <h2 class="subtitle">
+      De la luna ·  <a href="mailto:"></a>
+    </h2>
+  </div>
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="flex: 1; overflow: auto;">
+    <div class="content" style="overflow: auto; padding-top: 1.5rem;">
+      <h3 id="hola-soy-bluemoon-wave-y-aqui-encontraras-contenido-sobre-bitcoin-y-lightning">Hola soy BlueMoon 👋 y aquí encontrarás contenido sobre Bitcoin y Lightning.</h3>
+<ul>
+<li>🔭 Actualmente trabajo en el desarrollo de software en una universidad.</li>
+<li>🌱 Estoy aprendiendo sobre Bitcoin, su filosofía, desarrollo e implementación.</li>
+<li>👯 Colaborando en Bitcoin en la medida de lo posible.</li>
+<li>🤔 Estoy aprendiendo más sobre Bitcoin para aportar valor.</li>
+<li>💬 Pregúntame sobre el Back-end.</li>
+<li>📫 ¿Cómo contactar conmigo? mi enlace de Twitter está abajo.</li>
+<li>😄 Frase: Bitcoin es música y baila.</li>
+<li>⚡ Dato curioso: me encanta ir en mi bicicleta a toda velocidad.</li>
+</ul>
+<p><a href="https://github.com/BlueeeMoon"><img src="https://github-readme-stats.vercel.app/api?username=blueeemoon&amp;count_private=true&amp;show_icons=true&amp;line_height=20&amp;theme=default" alt="Stat" /></a>
+<a href="https://github.com/BlueeeMoon"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=blueeemoon&amp;layout=compact&amp;hide=HTML,PostScript&amp;theme=default_repocard" alt="Top-Langs" /></a></p>
+
+    </div>
+    <div class="is-hidden-touch">
+      <h3>Socialización</h3>
+      
+      
+      <a href="https:&#x2F;&#x2F;github.com&#x2F;BlueeeMoon" style="font-size: 1.75rem;" data-toggle="tooltip" title="GitHub"
+        data-offset="0,10" rel="me">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        
+      <a href="https:&#x2F;&#x2F;youtu.be&#x2F;Pc4SVlTmj7Y" style="font-size: 1.75rem;" data-toggle="tooltip" title="YouTube"
+        data-offset="0,10" rel="me">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        
+      <a href="https:&#x2F;&#x2F;twitter.com&#x2F;moon33_blue" style="font-size: 1.75rem;" data-toggle="tooltip" title="Twitter"
+        data-offset="0,10" rel="me">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+        
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+
+  
+  <div class="section hero is-fullheight page" id="bitcoin">
+    
+
+<div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100%;">
+  <h2><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;">bitcoin</a></h2>
+  <div class="is-hidden-touch">
+    <p>Contenido acerca de Bitcoin</p>
+
+  </div>
+  
+  <div class="pb-6 pt-2" style="overflow: auto;">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;conceptos-clave&#x2F;">Conceptos clave.</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2025-04-14</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/conceptos-bitcoin.png">
+            
+          </figure>
+          
+          <p>Conceptos clave acerca de <strong>Bitcoin</strong> <ul>   <li>¿Qué es una dirección de Bitcoin</li> <li>¿Qué es una UTXO?</li> <li>¿Qué es un nodo?</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;conceptos-clave&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/bitcoin">bitcoin</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;que-es-bitcoin&#x2F;">¿Qué es Bitcoin?</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2022-05-24</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/bitcoin/bitcoin.png">
+            
+          </figure>
+          
+          <p><strong>Bitcoin</strong>, es una moneda digital, un sistema de pago que se ejecuta por un software disponible para toda la gente. <ul>   <li>Es de código abierto.</li> <li>Está constantemente mejorándose y actualizándose gracias a los desarrolladores que están trabajando en ello.</li> <li>Puedes descargar el software y ejecutarlo para tu propio uso</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;que-es-bitcoin&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/bitcoin">bitcoin</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+  </div>
+  
+  <h3><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;bitcoin&#x2F;">Espera, ¡¡hay más!!</a></h3>
+  
+</div>
+
+  </div>
+  
+
+
+  
+  <div class="section hero is-fullheight page" id="lightning">
+    
+
+<div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100%;">
+  <h2><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;">lightning</a></h2>
+  <div class="is-hidden-touch">
+    <p>Contenido acerca de Lightning</p>
+
+  </div>
+  
+  <div class="pb-6 pt-2" style="overflow: auto;">
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;que-es-lightning&#x2F;">¿Qué es la red Lightning Network?</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2022-05-24</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/lightning.png">
+            
+          </figure>
+          
+          <p><strong>Lightning Network</strong> que propone una nueva red, una segunda capa. <ul>   <li>Se pueden realizar pagos entre usuarios de igual a igual.</li> <li>No se necesita que se publicar una transacción en la cadena de bloques de Bitcoin para cada pago.</li> <li>Los usuarios pueden pagarse entre sí en Lightning Network tantas veces como quieran sin incurrir en tarifas en cadena.</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;que-es-lightning&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/lightning">lightning</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;conceptos-sobre-lightning&#x2F;">Conceptos básicos sobre Lightning Network.</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2022-05-24</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/conceptos.png">
+            
+          </figure>
+          
+          <p>Definir conceptos importantes sobre <strong>Lightning Network.</strong> <ul>   <li>En Bitcoin cuando se transfiere valor a todos en la cadena de bloques se le denomina transacción.</li> <li>En Lightning Network lo llamamos pagos.</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;conceptos-sobre-lightning&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/lightning">lightning</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  <h3><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;lightning&#x2F;">Espera, ¡¡hay más!!</a></h3>
+  
+</div>
+
+  </div>
+  
+
+  
+  <div class="section hero is-fullheight page" id="recursos">
+    
+
+<div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100%;">
+  <h2><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;">recursos</a></h2>
+  <div class="is-hidden-touch">
+    <p>Recursos cómo pódcast, vídeos y más.</p>
+
+  </div>
+  
+  <div class="pb-6 pt-2" style="overflow: auto;">
+    
+    
+    
+    
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;map&#x2F;">Mapa de Bitcoin y Lightning.</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2022-11-13</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/mapa.png">
+            
+          </figure>
+          
+          <p>Recurso donde puede utilizar <strong>bitcoin</strong> y <strong>lightning.</strong> <ul>   <li>Encuentra lugares para usar satoshis</li> <li>En cualquier parte del planeta</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;map&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/bitcoin">bitcoin</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;zombies&#x2F;">Canales zombies.</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2025-02-27</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/zombi.png">
+            
+          </figure>
+          
+          <p>Canales <strong>zombies</strong> <ul>   <li>Guía para recuperar canales en estado zombie.</li> </ul></p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;zombies&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/lightning">lightning</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+  </div>
+  
+  <h3><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;recursos&#x2F;">Espera, ¡¡hay más!!</a></h3>
+  
+</div>
+
+  </div>
+  
+
+  
+  <div class="section hero is-fullheight page" id="publications">
+    
+
+<div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100%;">
+  <h2><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;publications&#x2F;">publications</a></h2>
+  <div class="is-hidden-touch">
+    <p>Colección de artículos relacionados a temas relevantes sobre Bitcoin.</p>
+
+  </div>
+  
+  <div class="pb-6 pt-2" style="overflow: auto;">
+    
+    
+    <div class="mb-5">
+      <nav class="level mb-0">
+        <div class="level-left">
+          <div class="level-item">
+            <h3 class="post-title"><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;publications&#x2F;seguridad&#x2F;">Privacidad en Bitcoin</a></h3>
+          </div>
+          
+        </div>
+        <div class="level-right is-hidden-touch">
+          <div class="level-item">
+            <span class="post-date">2021-06-18</span>
+          </div>
+        </div>
+      </nav>
+      <div class="is-flex is-flex-direction-row">
+        
+        <div class="content" style="width: 100%;">
+          
+          <figure class="image is-128x128" style="float:left;">
+            
+            <img src="https://blueeemoon.github.io/bluemoon/media/privacidad.png">
+            
+          </figure>
+          
+          <p>Privacidad en Bitcoin</p>
+
+          <a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;publications&#x2F;seguridad&#x2F;">Leer más</a>
+        </div>
+        
+      </div>
+      
+      <div class="tags">
+        
+        <span class="tag"><a href="/tags/bitcoin">Bitcoin</a></span>
+        
+        <span class="tag"><a href="/tags/privacidad">Privacidad</a></span>
+        
+      </div>
+      
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+  </div>
+  
+
+  
+  <div class="section hero is-fullheight page" id="blog">
+    
+
+<div class="is-flex is-flex-direction-column is-justify-content-center" style="height: 100%;">
+  <h2><a href="https:&#x2F;&#x2F;blueeemoon.github.io&#x2F;bluemoon&#x2F;blog&#x2F;">blog</a></h2>
+  <div class="is-hidden-touch">
+    <p>Colección de artículos relacionados a Bitcoin.</p>
+
+  </div>
+  
+  <div class="pb-6 pt-2" style="overflow: auto;">
+    
+  </div>
+  
+</div>
+
+  </div>
+  
+
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>

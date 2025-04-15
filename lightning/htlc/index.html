@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title></title>
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/saira-extra-condensed@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sans@4.5.0/index.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel="stylesheet" href="https://blueeemoon.github.io/bluemoon/main.css">
+
+  
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+
+<script src="https://blueeemoon.github.io/bluemoon/elasticlunr.min.js" defer></script>
+
+<script src="https://blueeemoon.github.io/bluemoon/search_index.en.js" defer></script>
+
+
+
+
+  
+  
+<!-- RSS -->
+
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://blueeemoon.github.io/bluemoon/rss.xml">
+    
+
+
+  
+
+  
+  
+</head>
+
+<body>
+  <aside id="sidebar" class="menu is-hidden-touch">
+    
+
+<div style="display:block;margin:auto auto 0;padding:.5rem">
+    <figure class="image">
+        <img id="avatar" class="is-rounded" src="https://blueeemoon.github.io/bluemoon/media/avatar.png">
+    </figure>
+</div>
+
+
+    
+<ul id="menu" class="menu-list">
+    
+
+<li data-menuanchor="about"><a href="https://blueeemoon.github.io/bluemoon/#anchor_about">ACERCA DE MI</a></li>   
+
+
+<li data-menuanchor="bitcoin"><a href="https://blueeemoon.github.io/bluemoon/#anchor_bitcoin">BITCOIN</a></li>   
+
+
+<li data-menuanchor="lightning"><a href="https://blueeemoon.github.io/bluemoon/#anchor_lightning">LIGHTNING</a></li>   
+
+
+<li data-menuanchor="recursos"><a href="https://blueeemoon.github.io/bluemoon/#anchor_recursos">RECURSOS</a></li>   
+
+
+<li data-menuanchor="publications"><a href="https://blueeemoon.github.io/bluemoon/#anchor_publications">PUBLICACIONES</a></li>
+
+ 
+<li data-menuanchor="blog"><a href="https://blueeemoon.github.io/bluemoon/#anchor_blog">BLOG</a></li>    
+
+</ul>
+
+  </aside>
+  
+<div class="modal" id="copyTarget">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <textarea class="textarea" id="bibtex-content" placeholder="e.g. Hello world"  readonly></textarea>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" id="copyButton">Copy to clipboard</button>
+    </footer>
+  </div>
+</div>
+
+  <div id="content">
+    <!-- Content -->
+    
+<div class="container is-fluid" style="min-height: 100vh;">
+  <div class="is-flex is-flex-direction-column is-justify-content-center" style="min-height: 100vh;">
+    <h2>HTLC (Hash Time-Locked Contracts).<a href="https:&#x2F;&#x2F;lightning.network&#x2F;" style="font-style: initial;" ><span class="tag is-warning">Link</span></a></h2>
+    
+    <div class="content pb-5">
+      <h3 id="htlc-hash-time-locked-contracts">HTLC (Hash Time-Locked Contracts).</h3>
+<p>¿Qué sucede si se requiere enviar (enrutar) pagos a una persona con la que no se esté conectada directamente?</p>
+<p>En Lightning los pagos enrutados están habilitados por Contratos Hashed Timelock <code>(HTLC)</code>, estos contratos permiten que se puedan enrutar pagos a través de multiples saltos para enviarlos a cualquier persona dentro de la red que no esté conectada directamente a tu canal permitiendo que exista un único sistema financiero global interconectado, con estos contratos de pago condicionado un usuario de la red, por ejemplo Alicia, puede enviar a Carol Bitcoin si ella revela la imagen (secreto) previa a un hash específico.</p>
+<p>Cabe mencionar que estos contratos constan de dos partes importantes: la verificación del hash y la verificación del tiempo de vencimiento.</p>
+<h4 id="veamos-como-es-esto">Veamos cómo es esto.</h4>
+<p>Imaginemos que Alicia quiere enviar un pago a Dave de 2000 satoshis, sin embargo Alicia no tiene un canal directo conectado hacia él, pero si tiene una ruta por donde llegar, un canal que conecta con Carol, Bob y Dave.</p>
+<p>Así que el pago se puede hacer sin ningún problema a través de una ruta. En este tipo de casos es cuando se ocupan los contratos HTLC donde se utilizan dos tipos de bloqueos.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>hash –lock: bloqueado hasta que presente el valor de un secreto.
+</span><span>time-lock: bloqueado hasta que el tiempo establecido se cumpla.
+</span></code></pre>
+<p>Veremos cómo funcionan más adelante, en la siguiente imagen podemos ver la situación de este pago para comprender los contratos HTLC.</p>
+<h4 id="situacion-alicia-tiene-un-canal-con-carol-carol-con-bob-y-bob-con-dave">Situación: Alicia tiene un canal con Carol, Carol con Bob y Bob con Dave.</h4>
+<p>De acuerdo a esta imagen podemos ver la ruta que llevaría hacer el pago a Dave, antes de comenzar con el flujo de pago definiremos algunas variables:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>R = secreto, también se conoce como preimagen y son solo los datos que se utilizan como entrada para una función hash.
+</span><span>H = hash del secreto R.
+</span></code></pre>
+<p><img src="https://raw.githubusercontent.com/BlueeeMoon/bluemoon/master/static/images/financiacion.png" alt="financiacion" /></p>
+<ul>
+<li>Alice enviará un pago de <code>2000</code> sats a Dave, lo primero que hace es notificarle que quiere enviárselos.</li>
+<li>Entonces Dave creará un número aleatorio llamado secreto R que no muestra a nadie, luego, calculará el hash de este secreto dando como resultado a H.</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Nota: Este hash será compartido a lo largo de los canales, es decir; siempre será el mismo.
+</span></code></pre>
+<ul>
+<li>Dave le envía a Alicia el Hash del secreto, ósea H.</li>
+<li>Alice entonces crea un contrato <code>HTLC</code> con ese hash H por la cantidad de 2002 sats y además agrega un bloqueo <code>(time-lock)</code> de tiempo establecido en 5 bloques.</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>Nota: los 3 sats adicionales se pagaran a los otros peers que ayuden a enrutar el pago y esa cantidad de 2003 sats quedará bloqueada en el contrato HTLC hasta que se encuentre R.
+</span></code></pre>
+<ul>
+<li>Alicia le dice a Carol: "Te pagaré si puedes encontrar el secreto R en los próximos 5 bloques", y firma una transacción que sólo Carol puede canjear con conocimiento del Hash del secreto <code>H(hash -lock)</code>, y después sólo es canjeable por Alice.</li>
+<li>Entonces Carol sabe que puede enviar los fondos a Bob si Bob encuentra el secreto <code>R</code>, utiliza el hash de Alicia y crea un contrato <code>HTLC</code> por la cantidad de 2001 sats y le dice Bob: "Te pagaré si puedes producir la preimagen de H en los siguientes 4 bloques", ósea el secreto <code>R</code>.</li>
+<li>Una vez que Bob encuentre <code>R</code>, Carol podrá desbloquear los fondos y cobrar la parte que le corresponde. Bob con conocimiento del secreto <code>R</code>, hace lo mismo, usa ese hash para crear un contrato <code>HTLC</code> por la cantidad de 2001 sats para enviárselo a Dave, y como Dave tiene el conocimiento de R puede desbloquear los 2000 sats y Bob cobrar la parte que le corresponde.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/BlueeeMoon/bluemoon/master/static/images/flujo-pago.png" alt="flujo" /></p>
+<h4 id="asi-que-con-el-flujo-de-informacion-anterior-tenemos">Así que con el flujo de información anterior tenemos.</h4>
+<ul>
+<li>Solo la persona que conozca el secreto R o preimagen que generó el hash H podrá usar el pago.</li>
+<li>Si el secreto no se revela a tiempo y no se utilizó el pago, se pueden reocupar los fondos.</li>
+<li>Los saldos de los canales han cambiado.</li>
+<li>Cada uno de los participantes gano 1 sat por enrutar el pago.</li>
+</ul>
+<p>Dejaré algunos enlaces donde pueden profundizar un poco más acerca de este tema:</p>
+<ol>
+<li><a href="https://dev.lightning.community/overview/">LND Overview and Developer Guide</a></li>
+<li><a href="https://medium.com/@peter_r/visualizing-htlcs-and-the-lightning-networks-dirty-little-secret-cb9b5773a0">Visualizing HTLCs and the Lightning Network’s Dirty Little Secret</a></li>
+<li><a href="https://github.com/lnbook/lnbook">Mastering the Lightning Network</a></li>
+</ol>
+<h4 id="gracias">Gracias.</h4>
+<p>Hemos visto de forma resumida cómo funcionan los contratos HTLC veamos cual es el flujo de un canal de pago en el siguiente artículo.</p>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+<script>
+  function show_bib(bib_path) {
+    $.ajax({
+      url: bib_path,
+      success: function (data) {
+        $("#bibtex-content").text(data);
+        $("#copyTarget").addClass("is-active");
+      },
+    });
+  }
+
+  document
+    .getElementById("copyButton")
+    .addEventListener("click", function () {
+      var copyText = document.getElementById("bibtex-content");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      $("#copyTarget").removeClass("is-active");
+    });
+</script>
+
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/vendors/scrolloverflow.min.js"></script>
+<script type="text/javascript">
+    var fullpages = new fullpage('#fullpage', {
+        menu: '#menu',
+        setRecordHistory: false,
+        anchors: [
+             'anchor_about',         
+             'anchor_bitcoin',       
+             'anchor_lightning',     
+             'anchor_recursos',      
+             'anchor_publications',  
+             'anchor_blog',          
+        ],
+        afterResize: function( width, height ){
+		    if (width < 936) {
+                fullpage_api.setAutoScrolling(false);
+            } else {
+                fullpage_api.setAutoScrolling(true);
+            }
+	    }
+    });
+    if (screen.width < 936){
+        fullpages.setAutoScrolling(false);
+    }
+
+</script>
+
+</body>
+
+</html>
