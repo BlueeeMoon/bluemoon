@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title> - utxo</title>
+      <link>https://blueeemoon.github.io/bluemoon/</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://blueeemoon.github.io/bluemoon/tags/utxo/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 24 May 2022 11:35:41 +0000</lastBuildDate>
+      <item>
+          <title>UTXO</title>
+          <pubDate>Tue, 24 May 2022 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/bitcoin/utxo/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/bitcoin/utxo/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/bitcoin/utxo/">&lt;h3 id=&quot;utxo&quot;&gt;UTXO&lt;&#x2F;h3&gt;
+&lt;p&gt;Gracias a la analogía que utilizó un usuario en Twitter sobre lo que son las UTXO realice una infografía debido a que me parecio que sería bonito llavarla a imagen.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;BlueeeMoon&#x2F;bluemoon&#x2F;master&#x2F;static&#x2F;images&#x2F;infografia.png&quot; alt=&quot;infografia&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;aqui-el-tweet&quot;&gt;Aquí el tweet&lt;&#x2F;h3&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;es&quot; dir=&quot;ltr&quot;&gt;Cuando recién escuché sobre UTXO&amp;#39;s no lograba comprender porqué las transacciones incluyen cambio devuelto hacia uno, como si pagáramos en efectivo en la tienda de la esquina.&lt;br&gt;&lt;br&gt;Los humanos somos mas buenos imaginando cosas físicas, así que creo que esta analogía ayuda:&lt;&#x2F;p&gt;&amp;mdash; thebatzuk⚡ (@thebatzuk) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;thebatzuk&#x2F;status&#x2F;1445132759211679746?ref_src=twsrc%5Etfw&quot;&gt;October 4, 2021&lt;&#x2F;a&gt;&lt;&#x2F;blockquote&gt; &lt;script async src=&quot;https:&#x2F;&#x2F;platform.twitter.com&#x2F;widgets.js&quot; charset=&quot;utf-8&quot;&gt;
+</description>
+      </item>
+    </channel>
+</rss>

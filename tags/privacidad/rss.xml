@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title> - Privacidad</title>
+      <link>https://blueeemoon.github.io/bluemoon/</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://blueeemoon.github.io/bluemoon/tags/privacidad/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 18 Jun 2021 11:35:41 +0000</lastBuildDate>
+      <item>
+          <title>Privacidad en Bitcoin</title>
+          <pubDate>Fri, 18 Jun 2021 11:35:41 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://blueeemoon.github.io/bluemoon/publications/seguridad/</link>
+          <guid>https://blueeemoon.github.io/bluemoon/publications/seguridad/</guid>
+          <description xml:base="https://blueeemoon.github.io/bluemoon/publications/seguridad/"></description>
+      </item>
+    </channel>
+</rss>
